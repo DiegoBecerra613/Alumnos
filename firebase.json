@@ -1,10 +1,36 @@
 {
   "hosting": {
-    "public": ".",
+    "rewrites": [
+      {
+        "source": "/mitablero",
+        "destination": "/mitablero.html"
+      },
+      {
+        "source": "/registro",
+        "destination": "/registro.html"
+      },
+      {
+        "source": "/index",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/crear-grupo",
+        "destination": "/crear-grupo.html"
+      },
+      {
+        "source": "/TomarAsistencias",
+        "destination": "/tomar-asistencias.html"
+      },
+      {
+        "source": "**",
+        "destination": "/404.html"
+      }
+    ],
+    "public": "./",
     "ignore": [
       "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+      "*/.",
+      "*/node_modules/*"
     ]
   }
 }
