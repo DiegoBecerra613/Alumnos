@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="icons/fabicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Tomar Asistencias</title>
+    <link rel="stylesheet" href="./css/tomar-asistencias.css"/>
+</head>
+<body>
+<div class="tomar-asistencia">
+    <iframe src="menu.html" frameborder="0" scrolling="no"  height="1000"></iframe>
+    <div class="div-tomar-lista">
+        <div class="div-tomar-asistenicas">
+            <p class="text-tomar-asistencia">Tomar Asistencias</p>
+            <p class="text-mes">MES</p>
+            <button class="btn-anterior-mes">
+                <img class="btn-anterior" src="./assets/chevron-left%201.svg">
+            </button>
+            <button class="btn-siguiente-mes">
+                <img class="btn-siguiente" src="./assets/chevron-right%201.svg">
+            </button>
+            <div class="div-contenedor-tabla">
+                <div class="tabla-wrapper">
+                    <table class="tabla-alumnos">
+                        <thead>
+                        <tr>
+                            <th>No. de<br>Lista</th>
+                            <th>Alumno</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Las filas se agregarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tabla-wrapper">
+                    <table class="tabla-asistencias">
+                        <thead>
+                        <!-- Las columnas se generarán dinámicamente en JavaScript -->
+                        </thead>
+                        <tbody>
+                        <!-- Las filas se generarán dinámicamente en JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module" src="./javascript/tomar-asistencias.js"></script>
+</body>
+</html>

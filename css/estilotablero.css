@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.nav-bar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-item {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.nav-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.main {
+    width: calc(100% - 200px);
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-title {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 20px;
+}
+
+.main-greeting {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    font-weight: normal;
+    color: #333333;
+    margin-top: 10px;
+}
+
+.main-buttons {
+    width: 80%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.main-button {
+    width: 200px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.main-button:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.main-button-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.main-button-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.main-button-text {
+    font-size: 12px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.main-illustration {
+    width: 80%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.main-illustration-img {
+    width: 300px;
+    height: 300px;
+}

@@ -1,0 +1,248 @@
+/*@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: #F6F6F6;
+}
+.inicisesion{
+    font-family: "Montserrat SemiBold";
+    position: relative;
+    width: 400%;
+    height: 100%;
+
+}
+.inicisesion form{
+
+    font-family: 'TerminaTest-Regular';
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.imgInicioSesion{
+    position: absolute;
+    top: 45%;
+    width: 500px;
+    height: 500px;
+}
+.registrarse{
+    font-family: 'TerminaTest-Regular';
+    position: absolute;
+    top: 3%;
+    left: 80%;
+}
+.infoSesion{
+    font-family: "Arial Rounded MT Bold";
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    font-size: 150%;
+}
+.infoNoCuenta{
+    font-family: 'TerminaTest-Regular';
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
+.inicisesion div.olvcontra{
+    color: #CCCCCC;
+    font-size: 40%;
+    position: absolute;
+    left: 49%;
+    top: 130%;
+}
+.inicisesion input[type="button"] {
+    position: absolute;
+    font-family: "Montserrat SemiBold";
+    top: 230%;
+    left: -3%;
+    margin: 0 10px;
+    padding: 2% 30%;
+    border: none;
+    border-radius: 5px;
+    background: #4461F2;
+    font-size: 50%;
+    color: white;
+    cursor: pointer;
+    width: 160%;
+    height: 100%;
+
+}
+.form .email{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+    width: 10%;
+
+}
+
+.contraseña input[type="password"] {
+    border: none;
+    border-radius: 5px;
+    background-color: #EAF0F7;
+    color: #4F555A;
+    font-size: 70%;
+    padding: 10px;
+    font-family: "Montserrat SemiBold";
+    width: 160%;
+    height: 100%;
+}
+.email input[type="email"] {
+    position: absolute;
+    top: -150%;
+    left: 20%;
+    border: none;
+    border-radius: 5px;
+    background-color: #EAF0F7;
+    color: #4F555A;
+    font-size: 70%;
+    padding: 10px;
+    font-family: "Montserrat SemiBold";
+    width: 160%;
+    height: 100%;
+}*/
+*@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+body {
+    margin: 0;
+    background: #FFFFFF;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    background: #FFFFFF;
+}
+
+.top-bar button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #4461F2;
+    color: #FFFFFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.top-bar button:hover {
+    background: darkblue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.left {
+    width: 40%;
+    padding: 20px;
+}
+
+.left img {
+
+    width: 100%;
+    height: auto;
+}
+
+.right {
+    width: 40%;
+    padding: 20px;
+}
+
+.right h1 {
+    font-family: 'Arial Rounded MT Bold';
+    text-align: center;
+    font-size: 200%;
+    margin-bottom: 20px;
+}
+
+.right p {
+    font-family: 'TerminaTest-Regular';
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.right p a {
+    font-family: 'TerminaTest-Regular';
+    color: #4461F2;
+    text-decoration: none;
+}
+
+.right p a:hover {
+    text-decoration: underline;
+}
+
+.right form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right form input {
+    font-family: 'Montserrat SemiBold';
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    background: #EAF0F7;
+    border: 1px #4461F2;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.right form button {
+    width: 52%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #4461F2;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.right form button:hover {
+    background: darkblue;
+}
+
+.right form span {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    font-size: 16px;
+}
+
+.right form span img {
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    border-radius: 50%;
+}

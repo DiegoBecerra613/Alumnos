@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+html {
+    font-size:62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+input {
+    border: none;
+}
+
+body {
+    width: 190rem;
+}.iniciodesesion-d9m {
+     width: 100%;
+     height: 102.4rem;
+     position: relative;
+     overflow: hidden;
+     background-color: #f6f6f6;
+ }
+.iniciodesesion-d9m .auto-group-1y3h-doy {
+    width: 105.2%;
+    height: 14.4%;
+    position: absolute;
+    left: 19.2rem;
+    top: 32.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+.iniciodesesion-d9m .auto-group-1y3h-doy .inicia-sesin-para-poder-ingresar-al-appel-tNX {
+    margin-right: 29rem;
+    max-width: 50rem;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Arial Rounded MT Bold, 'Source Sans Pro';
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-1y3h-doy .auto-group-4hq5-vq1 {
+    width: 38.5rem;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+}
+.iniciodesesion-d9m .auto-group-1y3h-doy .auto-group-4hq5-vq1 input {
+    margin-bottom: 3rem;
+    box-sizing: border-box;
+    padding: 1.8rem 1.9rem 1.9rem 1.9rem;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-1y3h-doy .auto-group-4hq5-vq1 input {
+    box-sizing: border-box;
+    padding: 1.8rem 1.9rem 1.9rem 1.9rem;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-4hq5-vq1 .btniniciarsesion-iuH {
+    width: 38.5rem;
+    height: 5.7rem;
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    left: 75rem;
+    top: 22.2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #ffffff;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4461f2;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+}
+.iniciodesesion-d9m .auto-group-axgk-Jcb {
+    width: 97.7rem;
+    height: 3.8rem;
+    position: absolute;
+    left: 26.7rem;
+    top: 47.2rem;
+    display: flex;
+    align-items: flex-end;
+}
+.iniciodesesion-d9m .auto-group-axgk-Jcb .si-no-tienes-una-cuenta-puedes-registrate-aqui-1mu {
+    margin-right: 67.9rem;
+    max-width: 50rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-axgk-Jcb .si-no-tienes-una-cuenta-puedes-registrate-aqui-1mu .si-no-tienes-una-cuenta-puedes-registrate-aqui-1mu-sub-0 {
+}
+.iniciodesesion-d9m .auto-group-axgk-Jcb .si-no-tienes-una-cuenta-puedes-registrate-aqui-1mu .si-no-tienes-una-cuenta-puedes-registrate-aqui-1mu-sub-1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2575;
+    color: #435fec;
+    font-family: Termina Test, 'Source Sans Pro';
+}
+.iniciodesesion-d9m .auto-group-axgk-Jcb .olvidaste-la-contrasea-LbD {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #cccccc;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .viewopcionessesion-dqD {
+    width: 38.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 94rem;
+    top: 66.5rem;
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+}
+.iniciodesesion-d9m .viewopcionessesion-dqD .line-2-kQ3 {
+    margin-top: 0.2rem;
+    width: 13.6rem;
+    height: 0.1rem;
+    background-color: #dfdfdf;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .viewopcionessesion-dqD .o-continua-con-4vX {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2175;
+    color: #acadac;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .viewopcionessesion-dqD .line-1-bQf {
+    margin-top: 0.2rem;
+    width: 13.6rem;
+    height: 0.1rem;
+    background-color: #dfdfdf;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-bh87-L7M {
+    width: 38.5rem;
+    height: 5.8rem;
+    position: absolute;
+    left: 94rem;
+    top: 74rem;
+    display: flex;
+    align-items: center;
+}
+.iniciodesesion-d9m .auto-group-bh87-L7M .btngoogle-SRH {
+    margin-right: 2.2rem;
+    box-sizing: border-box;
+    padding: 1.4rem 4.2rem;
+    height: 100%;
+    border: solid 0.1rem #dfdfdf;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-bh87-L7M .btngoogle-SRH .px-googleglogo-1-aXV {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    vertical-align: top;
+}
+.iniciodesesion-d9m .auto-group-bh87-L7M .btnmicrosoft-g4j {
+    margin-right: 2.1rem;
+    box-sizing: border-box;
+    padding: 1.4rem 4.2rem;
+    height: 100%;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-bh87-L7M .btnmicrosoft-g4j .microsofticon-1-bxP {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    vertical-align: top;
+}
+.iniciodesesion-d9m .auto-group-bh87-L7M .btnfacebook-i1R {
+    box-sizing: border-box;
+    padding: 1.4rem 4.2rem;
+    height: 100%;
+    border: solid 0.1rem #dfdfdf;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-bh87-L7M .btnfacebook-i1R .facebook-icone-f-1-G2w {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    vertical-align: top;
+}
+.iniciodesesion-d9m .imginiciosesion-P7Z {
+    width: 50rem;
+    height: 50rem;
+    position: absolute;
+    left: 0;
+    top: 38rem;
+}
+.iniciodesesion-d9m .imginiciosesion-P7Z .saly-10-ifd {
+    width: 50rem;
+    height: 50rem;
+    object-fit: cover;
+    vertical-align: top;
+}
+.iniciodesesion-d9m .auto-group-694f-GSF {
+    width: 24.5rem;
+    height: 4.1rem;
+    position: absolute;
+    left: 100rem;
+    top: 4.9rem;
+    display: flex;
+    align-items: flex-end;
+}
+.iniciodesesion-d9m .auto-group-694f-GSF .btniniciarsesion-P15 {
+    margin-right: 1.9rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-694f-GSF .btniniciarsesion-P15 .iniciar-sesion-Xd5 {
+    margin-bottom: 0.9rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    line-height: 1.2175;
+    color: #4461f2;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-694f-GSF .btniniciarsesion-P15 .line-3-ehh {
+    margin-right: 0.9rem;
+    width: 3rem;
+    height: 0;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.iniciodesesion-d9m .auto-group-694f-GSF .btnregistrarse-P9V {
+    text-decoration: none;
+    width: 12.3rem;
+    height: 100%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4461f2;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 2rem;
+    flex-shrink: 0;
+}

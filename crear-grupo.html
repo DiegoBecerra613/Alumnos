@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="icons/fabicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Crear Grupo</title>
+    <link rel="stylesheet" href="./css/crear-grupo.css"/>
+
+</head>
+<body>
+<div class="crear-grupo">
+
+    <iframe src="menu.html" frameborder="0" scrolling="no"  height="1000"></iframe>
+    <div class="div-crear-grupo">
+        <p class="text-crear-grupo">Crear Grupo</p>
+        <div class="div-datos-grupo">
+            <div class="div2-datos-grupo">
+                <p class="text-datos-grupo">Datos del Grupo</p>
+
+                <div class="div-grado">
+                    <label for="gradoSelected" class="text-grado">Grado</label>
+                    <select id="gradoSelected" class="CB-grado">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="div-grupos">
+                <label for="grupoSelect" class="text-grupo">Grupo</label>
+                <select id="grupoSelect" class="CB-grupo">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+            </div>
+
+            <div class="div-cicloescolar">
+                <label for="cicloescolarSelect" class="text-cicloescolar">Ciclo Escolar</label>
+                <select id="cicloescolarSelect" class="CB-cicloescolar">
+                </select>
+            </div>
+
+            <button class="btnAceptar">Aceptar</button>
+        </div>
+        <div class="div-Datos-Alumno">
+            <div class="div-apellidos-alumno">
+                <p class="text-datos-alumno">Datos del Alumno</p>
+                <input type="text" name="apellidos" placeholder="Apellidos del Alumno" required>
+            </div>
+            <input type="text" name="nombre" placeholder="Nombre del Alumno" required>
+            <button class="btnRegistrar">Registrar</button>
+        </div>
+
+        <p class="vista-previa-de-la-lista-KAj">Vista previa de la lista</p>
+        <div class="div-contenedor-tabla">
+            <div class="tabla-wrapper">
+                <table class="tabla-alumnos">
+                    <thead>
+                    <tr>
+                        <th>Numero de Registro</th>
+                        <th>Apellidos</th>
+                        <th>Nombre(s)</th>
+                        <th>Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Las filas se agregarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button class="btnAceptarGrupo">Aceptar Grupo</button>
+    </div>
+</div>
+<script type="module" src="./javascript/crear-grupo.js"></script>
+
+</body>

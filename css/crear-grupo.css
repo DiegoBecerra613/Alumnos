@@ -1,0 +1,406 @@
+@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+html {
+    font-size:62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+input {
+    border: none;
+}
+body:not(.autenticado) {
+    display: none;
+}
+body {
+    width: 190rem;
+}.crear-grupo {
+     box-sizing: border-box;
+     padding-right: 6.6rem;
+     width: 100%;
+     overflow: hidden;
+     position: relative;
+     display: flex;
+     align-items: center;
+     background-color: #f6f6f6;
+ }
+
+.crear-grupo .div-crear-grupo {
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    margin-top: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .text-crear-grupo {
+    margin-top: -7rem;
+    margin-bottom: 4.7rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo {
+    margin: 0rem 0rem 1.7rem 3.4rem;
+    box-sizing: border-box;
+    padding: 0.7rem 22.8rem 0.7rem 1rem;
+    height: 12.8rem;
+    width: 107rem;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div2-datos-grupo {
+    margin: 0rem 3.3rem 2.7rem 0rem;
+    width: 11.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div2-datos-grupo .text-datos-grupo {
+    margin: 0rem 0rem 0.9rem 0.3rem;
+    width: 10rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div2-datos-grupo .div-grado {
+    box-sizing: border-box;
+    padding: 1.6rem 0.6rem 1.7rem 2.185rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div2-datos-grupo .div-grado .text-grado {
+    margin-right: 0.4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div2-datos-grupo .div-grado .CB-grado {
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    height: 100%; /* Ajusta la altura según sea necesario */
+    border: none;
+    font-family: Montserrat, 'Source Sans Pro';
+    font-size: 1.6rem;
+    background-color: transparent;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div-grupos {
+    margin: 3rem 4.4rem 2.7rem 0rem;
+    box-sizing: border-box;
+    padding: 1.6rem 0.1rem 1.7rem 2.147rem;
+    height: calc(100% - 5.7rem);
+    display: flex;
+    align-items: center;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div-grupos .text-grupo {
+    margin-right: 1.453rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div-grupos .CB-grupo {
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    height: 100%; /* Ajusta la altura según sea necesario */
+    border: none;
+    font-family: Montserrat, 'Source Sans Pro';
+    font-size: 1.6rem;
+    background-color: transparent;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div-cicloescolar {
+    margin: 3rem 9.2rem 2.7rem 0rem;
+    box-sizing: border-box;
+    padding: 1.6rem 2.3rem 1.7rem 1.9rem;
+    height: calc(100% - 5.7rem);
+    display: flex;
+    align-items: center;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .div-cicloescolar .text-cicloescolar {
+    margin-right: 2.3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.crear-grupo .div-crear-grupo .div-datos-grupo .div-cicloescolar .CB-cicloescolar {
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    height: 100%; /* Ajusta la altura según sea necesario */
+    border: none;
+    font-family: Montserrat, 'Source Sans Pro';
+    font-size: 1.6rem;
+    background-color: transparent;
+}
+.crear-grupo .div-crear-grupo .div-datos-grupo .btnAceptar {
+    margin: 2.7rem 0rem 3rem 0rem;
+    width: 24.3rem;
+    border: none;
+    height: calc(100% - 5.7rem);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #ffffff;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4461f2;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-Datos-Alumno {
+    margin: 0rem 0rem 4.9rem 3.4rem;
+    box-sizing: border-box;
+    padding: 2.1rem 1.4rem 2.7rem 1.2rem;
+    height: 12.8rem;
+    width: 107rem;
+    display: flex;
+    column-gap: 3.1rem;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-Datos-Alumno .div-apellidos-alumno {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 38.5rem;
+    height: 100%;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-Datos-Alumno .div-apellidos-alumno .text-datos-alumno {
+    margin-top: -70px;
+    margin-bottom: 0.2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+}
+.crear-grupo .div-crear-grupo .div-Datos-Alumno .div-apellidos-alumno input {
+    margin-left: -180px;
+    box-sizing: border-box;
+    padding: 1.8rem 1.9rem 1.9rem 1.9rem;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+}
+.crear-grupo .div-crear-grupo .div-Datos-Alumno input {
+    margin-top: 2.3rem;
+    box-sizing: border-box;
+    padding: 1.8rem 1.9rem 1.9rem 1.9rem;
+    width: 38.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .div-Datos-Alumno .btnRegistrar {
+    border: none;
+    margin-top: 2.3rem;
+    width: 21.4rem;
+    height: 5.7rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #ffffff;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4461f2;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+}
+.crear-grupo .div-crear-grupo .vista-previa-de-la-lista-KAj {
+    margin: 0rem 0rem 0.2rem 4.9rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.crear-grupo .div-crear-grupo .btnAceptarGrupo {
+    margin-left: 84.6rem;
+    width: 26rem;
+    height: 5.7rem;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #ffffff;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4461f2;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+}
+.tabla-wrapper {
+    overflow-x: auto; /* Permitir el desplazamiento horizontal si la tabla es más ancha que el contenedor */
+    margin-left: 37px; /* Margen derecho para ajustar la posición de la tabla */
+}
+.div-contenedor-tabla {
+    max-height: 420px; /* Altura máxima para mostrar 8 elementos */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si hay más elementos */
+}
+.tabla-alumnos {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px; /* Esquinas redondeadas para la tabla completa */
+    overflow: hidden; /* Asegura que el contenido no desborde los bordes redondeados */
+    table-layout: fixed; /* Fijar el ancho de la tabla */
+}
+
+.tabla-alumnos th{
+    padding: 12px;
+    border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    color: #FFFFFF;
+    text-align: center; /* Alinea el texto en el centro */
+    width: 25%; /* Ancho fijo para cada columna */
+    white-space: nowrap; /* Evitar el desbordamiento de texto */
+    overflow: hidden; /* Ocultar el texto que desborda */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+.tabla-alumnos td {
+    padding: 12px;
+    border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    color: #000000;
+    text-align: center; /* Alinea el texto en el centro */
+
+    width: 25%; /* Ancho fijo para cada columna */
+    white-space: nowrap; /* Evitar el desbordamiento de texto */
+    overflow: hidden; /* Ocultar el texto que desborda */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+
+.tabla-alumnos th {
+    background-color: #4461F2;
+
+}
+
+.tabla-alumnos tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.btnEditar,
+.btnEliminar {
+    padding: 8px 20px;
+    margin-right: 15px; /* Agrega espacio entre los botones */
+    font-family: "Montserrat SemiBold";
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor:pointer;
+}
+
+.btnEditar{
+    background-color:#3DA8F5; /* Verde */
+}
+.btnEliminar{
+    background-color:#FA5252; /* Rojo */
+}
+
+/* Estilos para los input de edición */
+.tabla-alumnos input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-family: "Montserrat SemiBold";
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de aceptar cambios */
+.btnAceptarCambios {
+    padding: 8px 20px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50; /* Verde */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnAceptarCambios:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}

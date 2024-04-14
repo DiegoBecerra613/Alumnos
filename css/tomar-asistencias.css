@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+html {
+    font-size:62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+input {
+    border: none;
+}
+body:not(.autenticado) {
+    display: none;
+}
+body {
+}.tomar-asistencia {
+     width: 100%;
+     overflow: hidden;
+     position: relative;
+     display: flex;
+     align-items: center;
+     background-color: #f6f6f6;
+ }
+
+.tomar-asistencia .div-tomar-lista {
+    box-sizing: border-box;
+    padding: 3.3rem 2.4rem 1.5rem 0.1rem;
+    height: 102.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.tomar-asistencia .div-tomar-lista .div-tomar-asistenicas {
+    margin-right: 2.1rem;
+    width: 200rem;
+    height: 100%;
+    flex-shrink: 0;
+}
+.tomar-asistencia .div-tomar-lista .div-tomar-asistenicas .text-tomar-asistencia {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+}
+.tomar-asistencia .div-tomar-lista .div-tomar-asistenicas .text-mes {
+    margin-left: 80rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+}
+.tomar-asistencia .div-tomar-lista .div-tomar-asistenicas .btn-anterior-mes {
+    margin-left: 130rem;
+    background: none;
+    border: none;
+    color: #000000;
+    white-space: nowrap;
+}
+.tomar-asistencia .div-tomar-lista .div-tomar-asistenicas .btn-siguiente-mes {
+    background: none;
+    border: none;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.tabla-wrapper {
+    overflow-x: auto; /* Permitir el desplazamiento horizontal si la tabla es más ancha que el contenedor */
+}
+.div-contenedor-tabla {
+    display: grid; /* Utiliza Grid */
+    grid-template-columns: 0.25fr 1fr; /* Divide el contenedor en dos columnas */
+    grid-gap: 10px; /* Espacio entre las columnas */
+
+    max-height: 820px; /* Altura máxima para mostrar 8 elementos */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si hay más elementos */
+}
+
+.tabla-alumnos {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px; /* Esquinas redondeadas para la tabla completa */
+    overflow: hidden; /* Asegura que el contenido no desborde los bordes redondeados */
+    table-layout: fixed; /* Fijar el ancho de la tabla */
+}
+
+.tabla-alumnos th{
+    padding: 12px;
+    border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    color: #FFFFFF;
+    text-align: center; /* Alinea el texto en el centro */
+    width: 25%; /* Ancho fijo para cada columna */
+    white-space: nowrap; /* Evitar el desbordamiento de texto */
+    overflow: hidden; /* Ocultar el texto que desborda */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+.tabla-alumnos td {
+    padding: 12px;
+    border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    color: #000000;
+    text-align: center; /* Alinea el texto en el centro */
+    width: 25%; /* Ancho fijo para cada columna */
+    white-space: nowrap; /* Evitar el desbordamiento de texto */
+    overflow: hidden; /* Ocultar el texto que desborda */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+
+.tabla-alumnos th {
+    background-color: #4461F2;
+
+}
+
+.tabla-alumnos tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+.tabla-alumnos th:first-child,
+.tabla-alumnos td:first-child {
+    width: 10%; /* Ancho para la columna de número de lista */
+}
+
+.tabla-alumnos th:last-child,
+.tabla-alumnos td:last-child {
+    width: 57%; /* Ancho para la columna de alumnos */
+}
+
+
+
+.tabla-asistencias {
+    width: 10%;
+    margin: 7px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tabla-asistencias th,
+.tabla-asistencias td {
+    padding: 12px;
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    color: #FFFFFF;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tabla-asistencias th {
+    background-color: #4461F2;
+}
+
+.tabla-asistencias tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.btn-asistencia {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #4461F2;
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Elimina el relleno */
+    margin: 0; /* Elimina el margen */
+}
+
+.tabla-asistencias th,
+.tabla-asistencias td {
+    padding: 7px 8px; /* Ajusta el padding vertical y horizontal */
+}
+
+.btn-asistencia {
+    margin: 0; /* Elimina el margen */
+    padding: 5px; /* Ajusta el padding */
+}
+
+.btn-asistencia.asistio {
+    background-color: #05FF00;
+}
+/* CSS para los nuevos botones de colores */
+.btn-asistencia.inasistencia {
+    background-color: #FF0000; /* Rojo para inasistencia */
+}
+
+.btn-asistencia.falta-justificada {
+    background-color: #FFFF00; /* Amarillo para falta justificada */
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+/* Establecer la altura de las celdas en la tabla de asistencias */
+
+.tabla-asistencias td {
+    height: 2rem; /* Ajusta la altura según tus necesidades */
+}
