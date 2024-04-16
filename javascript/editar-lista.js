@@ -127,34 +127,27 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     // Actualizar el documento en Firebase
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
                     console.log(data.grado+""+data.grupo);
-                    const path = "grupos>"+data.grado+""+data.grupo+">lista>lista"+data.grado+""+data.grupo;
-                    buscarYActualizarValor(db, userId, path, anteriorValor, nuevoValor);
+                    consultarValorEnTabla(db, userId, data.grado+""+data.grupo)
                 }
             });
         }
     });
 }
 
-async function buscarYActualizarValor(db, userId, path, anteriorValor, nuevoValor) {
-    const pathParts = path.split('>');
-    const querySnapshot = await getDocs(collection(db, pathParts[0]));
-    querySnapshot.forEach(async (doc) => {
-        let data = doc.data();
-        for (let i = 1; i < pathParts.length; i++) {
-            data = data[pathParts[i]];
+async function consultarValorEnTabla(db, userId, docId) {
+    // Obtener el documento usando la variable docId de la colección 'grupos'
+    const docRef = doc(db, 'grupos', docId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        const data = docSnap.data();
+        if (data.userID === userId) {
+            // Imprimir los valores de la lista usando la variable listaId
+            console.log(data.lista[docId]);
         }
-        if (Array.isArray(data)) {
-            data.forEach(async (item, index) => {
-                if (item === anteriorValor) {
-                    // Actualizar el valor
-                    data[index] = nuevoValor;
-                    // Actualizar el documento en Firebase
-                    await updateDoc(doc.ref, { [pathParts[pathParts.length - 1]]: data });
-                    console.log(`Valor actualizado en ${path}`);
-                }
-            });
-        }
-    });
+    } else {
+        console.log("No se encontró el documento!");
+    }
 }
 
 
