@@ -62,4 +62,44 @@ function llenarTabla(datos) {
         row.appendChild(opcionesCell);
         tbody.appendChild(row);
     });
+    tablaAlumnos.addEventListener('click', function(event) {
+        const target = event.target;
+        const fila = target.closest('tr');
+
+        if (target.classList.contains('btnEditar')) {
+            editarFila(fila);
+        } else if (target.classList.contains('btnEliminar')) {
+            eliminarFila(fila);
+        } else if (target.classList.contains('btnAceptarCambios')) {
+            aceptarCambios(fila);
+        }
+    });
+    function editarFila(fila) {
+        const celdaApellidos = fila.querySelector('td:nth-child(2)');
+        const celdaNombre = fila.querySelector('td:nth-child(3)');
+
+        const inputApellidos = document.createElement('input');
+        inputApellidos.type = 'text';
+        inputApellidos.value = celdaApellidos.textContent;
+
+        const inputNombre = document.createElement('input');
+        inputNombre.type = 'text';
+        inputNombre.value = celdaNombre.textContent;
+
+        celdaApellidos.innerHTML = '';
+        celdaNombre.innerHTML = '';
+
+        celdaApellidos.appendChild(inputApellidos);
+        celdaNombre.appendChild(inputNombre);
+
+        // Ocultar botones de editar y eliminar
+        fila.querySelector('.btnEditar').style.display = 'none';
+        fila.querySelector('.btnEliminar').style.display = 'none';
+
+        // Crear botón de aceptar cambios
+        const btnAceptarCambios = document.createElement('button');
+        btnAceptarCambios.textContent = 'Aceptar';
+        btnAceptarCambios.classList.add('btnAceptarCambios');
+        fila.querySelector('td:last-child').appendChild(btnAceptarCambios);
+    }
 }
