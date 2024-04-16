@@ -35,55 +35,31 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 function llenarTabla(datos) {
-    console.log("Datos recibidos:", datos);
-    // Obtener el cuerpo de la tabla
     const tbody = document.querySelector('.tabla-alumnos tbody');
-    console.log("Tbody seleccionado:", tbody);
-  
-    // Limpiar el contenido actual de la tabla
     tbody.innerHTML = '';
-    console.log("Contenido de tbody después de limpiar:", tbody.innerHTML);
-  
-    // Ordenar los nombres de los alumnos alfabéticamente
     const nombresOrdenados = datos.sort();
-    console.log("Nombres ordenados:", nombresOrdenados);
-  
-    // Iterar sobre los nombres ordenados y agregar filas a la tabla
     nombresOrdenados.forEach((nombre, index) => {
-        console.log("Procesando nombre:", nombre);
-        // Dividir el nombre en apellidos y nombres
         const [apellidos, ...nombres] = nombre.split(' ');
-      
-        // Crear una nueva fila de la tabla
         const row = document.createElement('tr');
-      
-        // Añadir número de registro (index + 1)
         const numeroRegistro = document.createElement('td');
         numeroRegistro.textContent = index + 1;
         row.appendChild(numeroRegistro);
-      
-        // Añadir apellidos
         const apellidosCell = document.createElement('td');
         apellidosCell.textContent = apellidos;
         row.appendChild(apellidosCell);
-      
-        // Añadir nombres
         const nombresCell = document.createElement('td');
         nombresCell.textContent = nombres.join(' '); // Unir los nombres separados por un espacio
         row.appendChild(nombresCell);
-      
-        // Añadir celda de opciones (podrías añadir botones de editar, eliminar, etc.)
         const opcionesCell = document.createElement('td');
-        opcionesCell.textContent = 'Opciones'; // Aquí podrías añadir botones de editar, eliminar, etc.
+        const btnEditar = document.createElement('button');
+        btnEditar.textContent = 'Editar';
+        btnEditar.classList.add('btnEditar');
+        opcionesCell.appendChild(btnEditar);
+        const btnEliminar = document.createElement('button');
+        btnEliminar.textContent = 'Eliminar';
+        btnEliminar.classList.add('btnEliminar');
+        opcionesCell.appendChild(btnEliminar);
         row.appendChild(opcionesCell);
-      
-        // Agregar la fila a la tabla
         tbody.appendChild(row);
-        console.log("Fila agregada:", row);
     });
-}
-
-function limpiarTabla() {
-    const tbody = document.querySelector('.tabla-alumnos tbody');
-    tbody.innerHTML = ''; // Eliminar todas las filas existentes
 }
