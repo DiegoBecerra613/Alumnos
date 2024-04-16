@@ -139,23 +139,23 @@ async function buscarYActualizarValor(db, userId, path, anteriorValor, nuevoValo
     const pathParts = path.split('>');
     const querySnapshot = await getDocs(collection(db, pathParts[0]));
     querySnapshot.forEach(async (doc) => {
-        const data = doc.data();
-        if (data.userID === userId) {
-            let currentData = data;
-            for (let i = 1; i < pathParts.length; i++) {
-                currentData = currentData[pathParts[i]];
-            }
-            currentData.forEach(async (valor, index) => {
-                if (valor === anteriorValor) {
+        let data = doc.data();
+        for (let i = 1; i < pathParts.length; i++) {
+            data = data[pathParts[i]];
+        }
+        if (Array.isArray(data)) {
+            data.forEach(async (item, index) => {
+                if (item === anteriorValor) {
                     // Actualizar el valor
-                    currentData[index] = nuevoValor;
+                    data[index] = nuevoValor;
                     // Actualizar el documento en Firebase
-                    await updateDoc(doc.ref, data);
+                    await updateDoc(doc.ref, { [pathParts[pathParts.length - 1]]: data });
                     console.log(`Valor actualizado en ${path}`);
                 }
             });
         }
     });
 }
+
 
 
