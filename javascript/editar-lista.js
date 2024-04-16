@@ -112,10 +112,10 @@ function aceptarCambios(fila,userId,anteriorValor) {
 
     // Eliminar botón de aceptar cambios
     fila.querySelector('.btnAceptarCambios').remove();
-    editarValorEnTabla(userId,anteriorValor,nuevoValor)
+    editarValorEnTabla(db,userId,anteriorValor,nuevoValor)
 }
 
-async function editarValorEnTabla(userId,anteriorValor,nuevoValor) {
+async function editarValorEnTabla(db,userId,anteriorValor,nuevoValor) {
     const querySnapshot = await getDocs(collection(db, 'grupos'));
     querySnapshot.forEach((doc) => {
         const data = doc.data();
