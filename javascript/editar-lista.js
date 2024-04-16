@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    limpiarTabla();
-                    //llenarTabla(grupoData.nombresAlumnos);
+                    llenarTabla(grupoData.nombresAlumnos);
                 }
             });
         } else {
