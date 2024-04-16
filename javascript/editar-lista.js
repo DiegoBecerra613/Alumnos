@@ -27,14 +27,13 @@ document.addEventListener("DOMContentLoaded", async function () {
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    const nombre = grupoData.nombresAlumnos;
-                    console.log(nombre);
-                    const apellidos = grupoData.apellidosAlumnos;
-                    console.log(apellidos);
+                    const nombreCompleto = grupoData.nombresAlumnos;
+                    const [primerApellido, segundoApellido, ...nombres] = nombreCompleto.split(' ');
+                    const nombre = nombres.join(' ');
                     const fila = document.createElement('tr');
                     fila.innerHTML = `
                         <td>${numeroLista}</td>
-                        <td>${apellidos}</td>
+                        <td>${primerApellido} ${segundoApellido}</td>
                         <td>${nombre}</td>
                         <td class="opciones">
                             <button class="btnEditar">Editar</button>
