@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
                     const nombre = grupoData.nombresAlumnos;
+                    console.log(nombre);
                     const apellidos = grupoData.apellidosAlumnos;
+                    console.log(apellidos);
                     const fila = document.createElement('tr');
                     fila.innerHTML = `
                         <td>${numeroLista}</td>
