@@ -34,23 +34,25 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 });
 
-// Función para llenar la tabla con los datos de los alumnos
 function llenarTabla(datos) {
+    console.log("Datos recibidos:", datos);
     // Obtener el cuerpo de la tabla
     const tbody = document.querySelector('.tabla-alumnos tbody');
+    console.log("Tbody seleccionado:", tbody);
   
     // Limpiar el contenido actual de la tabla
     tbody.innerHTML = '';
+    console.log("Contenido de tbody después de limpiar:", tbody.innerHTML);
   
     // Ordenar los nombres de los alumnos alfabéticamente
     const nombresOrdenados = datos.sort();
+    console.log("Nombres ordenados:", nombresOrdenados);
   
     // Iterar sobre los nombres ordenados y agregar filas a la tabla
     nombresOrdenados.forEach((nombre, index) => {
+        console.log("Procesando nombre:", nombre);
         // Dividir el nombre en apellidos y nombres
         const [apellidos, ...nombres] = nombre.split(' ');
-        console.log(apellidos);
-        console.log(nombres);
       
         // Crear una nueva fila de la tabla
         const row = document.createElement('tr');
@@ -77,5 +79,6 @@ function llenarTabla(datos) {
       
         // Agregar la fila a la tabla
         tbody.appendChild(row);
+        console.log("Fila agregada:", row);
     });
 }
