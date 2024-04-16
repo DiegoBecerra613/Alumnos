@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
                     console.log(grupoData.nombresAlumnos);
-                    // Aquí puedes hacer lo que necesites con los nombres de los alumnos
+                    llenarTabla(grupoData.nombresAlumnos);
                 }
             });
         } else {
@@ -34,3 +34,48 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     });
 });
+
+// Función para llenar la tabla con los datos de los alumnos
+function llenarTabla(datos) {
+    // Obtener el cuerpo de la tabla
+    const tbody = document.querySelector('.tabla-alumnos tbody');
+  
+    // Limpiar el contenido actual de la tabla
+    tbody.innerHTML = '';
+  
+    // Ordenar los nombres de los alumnos alfabéticamente
+    const nombresOrdenados = datos.sort();
+    console.log(nombresOrdenados);
+  
+    // Iterar sobre los nombres ordenados y agregar filas a la tabla
+    nombresOrdenados.forEach((nombre, index) => {
+        // Dividir el nombre en apellidos y nombres
+        const [apellidos, ...nombres] = nombre.split(' ');
+      
+        // Crear una nueva fila de la tabla
+        const row = document.createElement('tr');
+      
+        // Añadir número de registro (index + 1)
+        const numeroRegistro = document.createElement('td');
+        numeroRegistro.textContent = index + 1;
+        row.appendChild(numeroRegistro);
+      
+        // Añadir apellidos
+        const apellidosCell = document.createElement('td');
+        apellidosCell.textContent = apellidos;
+        row.appendChild(apellidosCell);
+      
+        // Añadir nombres
+        const nombresCell = document.createElement('td');
+        nombresCell.textContent = nombres.join(' '); // Unir los nombres separados por un espacio
+        row.appendChild(nombresCell);
+      
+        // Añadir celda de opciones (podrías añadir botones de editar, eliminar, etc.)
+        const opcionesCell = document.createElement('td');
+        opcionesCell.textContent = 'Opciones'; // Aquí podrías añadir botones de editar, eliminar, etc.
+        row.appendChild(opcionesCell);
+      
+        // Agregar la fila a la tabla
+        tbody.appendChild(row);
+    });
+}
