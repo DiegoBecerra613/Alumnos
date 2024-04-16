@@ -105,9 +105,6 @@ function aceptarCambios(fila,userId,anteriorValor) {
     fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
     fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
 
-    nuevoValor=celdaApellidos.value + " " + celdaNombre.value;
-    console.log(nuevoValor)
-
     // Mostrar botones de editar y eliminar
     fila.querySelector('.btnEditar').style.display = 'inline-block';
     fila.querySelector('.btnEliminar').style.display = 'inline-block';
