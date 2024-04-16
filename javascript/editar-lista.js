@@ -127,7 +127,5 @@ async function editarValorEnTabla(db,userId,anteriorValor,nuevoValor) {
             });
         }
     });
-
-    return alumnosConAnteriorValor;
 }
 
