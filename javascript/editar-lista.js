@@ -142,8 +142,7 @@ async function consultarValorEnTabla(db, userId, docId) {
     if (docSnap.exists()) {
         const data = docSnap.data();
         if (data.userID === userId) {
-            // Imprimir los valores de la lista usando la variable listaId
-            console.log(data.lista[docId]);
+            console.log(data.lista3C);
         }
     } else {
         console.log("No se encontró el documento!");
