@@ -21,27 +21,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     onAuthStateChanged(auth, async function (user) {
         if (user) {
             const userId = user.uid;
-            const querySnapshot = await getDocs(query(collection(db, 'grupos'), orderBy('nombresAlumnos')));
-            const tablaBody = document.querySelector('.tabla-alumnos tbody');
-            let numeroLista = 1;
+            const querySnapshot = await getDocs(collection(db, 'grupos'));
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    const nombreCompleto = grupoData.nombresAlumnos;
-                    const [primerApellido, segundoApellido, ...nombres] = nombreCompleto.split(' ');
-                    const nombre = nombres.join(' ');
-                    const fila = document.createElement('tr');
-                    fila.innerHTML = `
-                        <td>${numeroLista}</td>
-                        <td>${primerApellido} ${segundoApellido}</td>
-                        <td>${nombre}</td>
-                        <td class="opciones">
-                            <button class="btnEditar">Editar</button>
-                            <button class="btnEliminar">Eliminar</button>
-                        </td>
-                    `;
-                    tablaBody.appendChild(fila);
-                    numeroLista++;
+                    console.log(grupoData.nombresAlumnos);
                 }
             });
         } else {
