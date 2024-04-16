@@ -68,11 +68,9 @@ function llenarTabla(datos,userId) {
 }
 
 function editarFila(fila,userId) {
-    console.log(fila);
     const celdaApellidos = fila.querySelector('td:nth-child(2)');
     const celdaNombre = fila.querySelector('td:nth-child(3)');
     const anteriorValor = celdaApellidos.textContent + " "+ celdaNombre.textContent;
-    console.log(anteriorValor)
 
     const inputApellidos = document.createElement('input');
     inputApellidos.type = 'text';
@@ -100,12 +98,15 @@ function editarFila(fila,userId) {
     btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila,userId,anteriorValor));
 }
 
-function aceptarCambios(fila,userId) {
+function aceptarCambios(fila,userId,anteriorValor) {
     const celdaApellidos = fila.querySelector('td:nth-child(2) input');
     const celdaNombre = fila.querySelector('td:nth-child(3) input');
 
     fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
     fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
+
+    nuevoValor=celdaApellidos.value + " " + celdaNombre.value;
+    console.log(nuevoValor)
 
     // Mostrar botones de editar y eliminar
     fila.querySelector('.btnEditar').style.display = 'inline-block';
@@ -113,7 +114,7 @@ function aceptarCambios(fila,userId) {
 
     // Eliminar botón de aceptar cambios
     fila.querySelector('.btnAceptarCambios').remove();
-    console.log(userId);
+    //editarValorEnTabla(userId,anteriorValor,nuevoValor)
 }
 
 async function editarValorEnTabla(userId,anteriorValor, nuevoValor) {
