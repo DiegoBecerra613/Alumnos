@@ -2006,3 +2006,99 @@ body {
   box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
   flex-shrink: 0;
 }
+.tabla-wrapper {
+  overflow-x: auto; /* Permitir el desplazamiento horizontal si la tabla es más ancha que el contenedor */
+  margin-left: 37px; /* Margen derecho para ajustar la posición de la tabla */
+}
+.div-contenedor-tabla {
+  max-height: 420px; /* Altura máxima para mostrar 8 elementos */
+  overflow-y: auto; /* Habilitar el desplazamiento vertical si hay más elementos */
+}
+.tabla-alumnos {
+  width: 60%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px; /* Esquinas redondeadas para la tabla completa */
+  overflow: hidden; /* Asegura que el contenido no desborde los bordes redondeados */
+  table-layout: fixed; /* Fijar el ancho de la tabla */
+}
+
+.tabla-alumnos th{
+  padding: 12px;
+  border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+  font-family: "Montserrat SemiBold";
+  font-size: 1.7rem;
+  color: #FFFFFF;
+  text-align: center; /* Alinea el texto en el centro */
+  width: 25%; /* Ancho fijo para cada columna */
+  white-space: nowrap; /* Evitar el desbordamiento de texto */
+  overflow: hidden; /* Ocultar el texto que desborda */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+.tabla-alumnos td {
+  padding: 12px;
+  border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+  font-family: "Montserrat SemiBold";
+  font-size: 1.7rem;
+  color: #000000;
+  text-align: center; /* Alinea el texto en el centro */
+
+  width: 25%; /* Ancho fijo para cada columna */
+  white-space: nowrap; /* Evitar el desbordamiento de texto */
+  overflow: hidden; /* Ocultar el texto que desborda */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+
+.tabla-alumnos th {
+  background-color: #4461F2;
+
+}
+
+.tabla-alumnos tr:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+.btnEditar,
+.btnEliminar {
+  padding: 8px 20px;
+  margin-right: 15px; /* Agrega espacio entre los botones */
+  font-family: "Montserrat SemiBold";
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor:pointer;
+}
+
+.btnEditar{
+  background-color:#3DA8F5; /* Verde */
+}
+.btnEliminar{
+  background-color:#FA5252; /* Rojo */
+}
+
+/* Estilos para los input de edición */
+.tabla-alumnos input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-family: "Montserrat SemiBold";
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Estilos para el botón de aceptar cambios */
+.btnAceptarCambios {
+  padding: 8px 20px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  background-color: #4CAF50; /* Verde */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btnAceptarCambios:hover {
+  background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
