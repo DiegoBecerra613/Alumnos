@@ -117,15 +117,17 @@ function aceptarCambios(fila,userId,anteriorValor) {
 
 async function editarValorEnTabla(userId,anteriorValor,nuevoValor) {
     const querySnapshot = await getDocs(collection(db, 'grupos'));
-    const documentos = [];
-    
     querySnapshot.forEach((doc) => {
         const data = doc.data();
-        // Verificar si el campo que deseas editar tiene el valor anterior
-        if (data.campoAEditar === anteriorValor) {
-            console.log(data.campoAEditar);
+        if (data.userID === userId) {
+            data.nombresAlumnos.forEach((nombre, index) => {
+                if (nombre === anteriorValor) {
+                    console.log("SI")
+                }
+            });
         }
     });
 
-    return documentos;
+    return alumnosConAnteriorValor;
 }
+
