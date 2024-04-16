@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    console.log(grupoData.nombresAlumnos);
                     llenarTabla(grupoData.nombresAlumnos);
                 }
             });
@@ -45,12 +44,13 @@ function llenarTabla(datos) {
   
     // Ordenar los nombres de los alumnos alfabéticamente
     const nombresOrdenados = datos.sort();
-    console.log(nombresOrdenados);
   
     // Iterar sobre los nombres ordenados y agregar filas a la tabla
     nombresOrdenados.forEach((nombre, index) => {
         // Dividir el nombre en apellidos y nombres
         const [apellidos, ...nombres] = nombre.split(' ');
+        console.log(apellidos);
+        console.log(nombres);
       
         // Crear una nueva fila de la tabla
         const row = document.createElement('tr');
