@@ -55,6 +55,6 @@ onAuthStateChanged(auth, async (user) => {
     });
 
     document.querySelector('.btn_editar_lista').addEventListener('click', function(){
-        window.location.href = 'EditarLista';
+        window.location.href = 'TomarAsistencias';
     })
 });
