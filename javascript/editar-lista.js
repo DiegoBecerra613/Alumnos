@@ -21,11 +21,26 @@ document.addEventListener("DOMContentLoaded", async function () {
     onAuthStateChanged(auth, async function (user) {
         if (user) {
             const userId = user.uid;
-            const querySnapshot = await getDocs(collection(db, 'grupos'));
+            const querySnapshot = await getDocs(query(collection(db, 'grupos'), orderBy('nombresAlumnos')));
+            const tablaBody = document.querySelector('.tabla-alumnos tbody');
+            let numeroLista = 1;
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    console.log(grupoData.nombresAlumnos);
+                    const nombre = grupoData.nombresAlumnos;
+                    const apellidos = grupoData.apellidosAlumnos;
+                    const fila = document.createElement('tr');
+                    fila.innerHTML = `
+                        <td>${numeroLista}</td>
+                        <td>${apellidos}</td>
+                        <td>${nombre}</td>
+                        <td class="opciones">
+                            <button class="btnEditar">Editar</button>
+                            <button class="btnEliminar">Eliminar</button>
+                        </td>
+                    `;
+                    tablaBody.appendChild(fila);
+                    numeroLista++;
                 }
             });
         } else {
