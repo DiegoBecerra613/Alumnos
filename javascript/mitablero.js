@@ -51,10 +51,10 @@ onAuthStateChanged(auth, async (user) => {
 
     // Agregar evento click al botón para redirigir al usuario a la página crear-grupo.html
     document.querySelector('.btn_tomar_asistencia').addEventListener('click', function() {
-        window.location.href = 'TomarAsistencias';
+        window.location.href = 'EditarLista';
     });
 
     document.querySelector('.btn_editar_lista').addEventListener('click', function(){
-        window.location.href = 'TomarAsistencias';
+        window.location.href = 'EditarLista';
     })
 });
