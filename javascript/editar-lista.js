@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    llenarTabla(grupoData.nombresAlumnos,userId);
+                    llenarTabla(grupoData.nombresAlumnos,userId,db);
                 }
             });
         } else {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 });
 
-function llenarTabla(datos,userId) {
+function llenarTabla(datos,userId,db) {
     const tbody = document.querySelector('.tabla-alumnos tbody');
     tbody.innerHTML = '';
     const nombresOrdenados = datos.sort();
@@ -62,12 +62,12 @@ function llenarTabla(datos,userId) {
         row.appendChild(opcionesCell);
         tbody.appendChild(row);
 
-        btnEditar.addEventListener('click', () => editarFila(row,userId));
+        btnEditar.addEventListener('click', () => editarFila(row,userId,db));
         btnEliminar.addEventListener('click', () => eliminarFila(row));
     });
 }
 
-function editarFila(fila,userId) {
+function editarFila(fila,userId,db) {
     const celdaApellidos = fila.querySelector('td:nth-child(2)');
     const celdaNombre = fila.querySelector('td:nth-child(3)');
     const anteriorValor = celdaApellidos.textContent + " "+ celdaNombre.textContent;
@@ -95,10 +95,10 @@ function editarFila(fila,userId) {
     btnAceptarCambios.textContent = 'Aceptar';
     btnAceptarCambios.classList.add('btnAceptarCambios');
     fila.querySelector('td:last-child').appendChild(btnAceptarCambios);
-    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila,userId,anteriorValor));
+    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila,userId,anteriorValor,db));
 }
 
-function aceptarCambios(fila,userId,anteriorValor) {
+function aceptarCambios(fila,userId,anteriorValor,db) {
     const celdaApellidos = fila.querySelector('td:nth-child(2) input');
     const celdaNombre = fila.querySelector('td:nth-child(3) input');
 
