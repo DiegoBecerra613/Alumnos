@@ -127,9 +127,35 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     // Actualizar el documento en Firebase
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
                     console.log(data.grado+""+data.grupo);
+                    const path = "grupos>"+data.grado+""+data.grupo+">lista>lista"+data.grado+""+data.grupo;
+                    buscarYActualizarValor(db, userId, path, anteriorValor, nuevoValor);
                 }
             });
         }
     });
 }
+
+async function buscarYActualizarValor(db, userId, path, anteriorValor, nuevoValor) {
+    const pathParts = path.split('>');
+    const querySnapshot = await getDocs(collection(db, pathParts[0]));
+    querySnapshot.forEach(async (doc) => {
+        const data = doc.data();
+        if (data.userID === userId) {
+            let currentData = data;
+            for (let i = 1; i < pathParts.length; i++) {
+                currentData = currentData[pathParts[i]];
+            }
+            currentData.forEach(async (valor, index) => {
+                if (valor === anteriorValor) {
+                    // Actualizar el valor
+                    currentData[index] = nuevoValor;
+                    // Actualizar el documento en Firebase
+                    await updateDoc(doc.ref, data);
+                    console.log(`Valor actualizado en ${path}`);
+                }
+            });
+        }
+    });
+}
+
 
