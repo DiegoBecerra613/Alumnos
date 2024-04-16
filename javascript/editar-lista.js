@@ -120,19 +120,13 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
     querySnapshot.forEach(async (doc) => {
         const data = doc.data();
         if (data.userID === userId) {
-            const nombresRef = doc.ref.collection('nombresAlumnos');
-            const nombresSnapshot = await getDocs(nombresRef);
-
-            nombresSnapshot.forEach(async (nombreDoc) => {
-                const nombreData = nombreDoc.data();
-                if (nombreData.nombre === anteriorValor) {
-                    // Actualizar el nombre localmente
-                    await nombreDoc.ref.update({ nombre: nuevoValor });
-                    console.log("Nombre actualizado localmente:", anteriorValor, "->", nuevoValor);
-                }
-            });
+            const nombresAlumnos = data.nombresAlumnos;
+            const index = nombresAlumnos.indexOf(anteriorValor);
+            if (index !== -1) {
+                nombresAlumnos[index] = nuevoValor;
+                await doc.ref.update({ nombresAlumnos });
+                console.log("Nombre actualizado:", anteriorValor, "->", nuevoValor);
+            }
         }
     });
 }
-
-
