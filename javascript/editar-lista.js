@@ -120,13 +120,16 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
     querySnapshot.forEach(async (doc) => {
         const data = doc.data();
         if (data.userID === userId) {
-            const nombresAlumnos = data.nombresAlumnos;
-            const index = nombresAlumnos.indexOf(anteriorValor);
-            if (index !== -1) {
-                nombresAlumnos[index] = nuevoValor;
-                await doc.ref.update({ nombresAlumnos });
-                console.log("Nombre actualizado:", anteriorValor, "->", nuevoValor);
-            }
+            data.nombresAlumnos.forEach(async (nombre, index) => {
+                if (nombre === anteriorValor) {
+                    // Actualizar el valor
+                    data.nombresAlumnos[index] = nuevoValor;
+                    // Actualizar el documento en Firebase
+                    await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
+                    console.log("Actualizado");
+                }
+            });
         }
     });
 }
+
