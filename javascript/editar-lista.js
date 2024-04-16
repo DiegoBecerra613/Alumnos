@@ -115,17 +115,24 @@ function aceptarCambios(fila,userId,anteriorValor,db) {
     editarValorEnTabla(db,userId,anteriorValor,nuevoValor)
 }
 
-async function editarValorEnTabla(db,userId,anteriorValor,nuevoValor) {
+async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
     const querySnapshot = await getDocs(collection(db, 'grupos'));
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach(async (doc) => {
         const data = doc.data();
         if (data.userID === userId) {
-            data.nombresAlumnos.forEach((nombre, index) => {
-                if (nombre === anteriorValor) {
-                    console.log("SI")
+            const nombresRef = doc.ref.collection('nombresAlumnos');
+            const nombresSnapshot = await getDocs(nombresRef);
+
+            nombresSnapshot.forEach(async (nombreDoc) => {
+                const nombreData = nombreDoc.data();
+                if (nombreData.nombre === anteriorValor) {
+                    // Actualizar el nombre localmente
+                    await nombreDoc.ref.update({ nombre: nuevoValor });
+                    console.log("Nombre actualizado localmente:", anteriorValor, "->", nuevoValor);
                 }
             });
         }
     });
 }
+
 
