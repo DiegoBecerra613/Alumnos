@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    llenarTabla(grupoData.nombresAlumnos);
+                    limpiarTabla();
+                    //llenarTabla(grupoData.nombresAlumnos);
                 }
             });
         } else {
@@ -81,4 +82,9 @@ function llenarTabla(datos) {
         tbody.appendChild(row);
         console.log("Fila agregada:", row);
     });
+}
+
+function limpiarTabla() {
+    const tbody = document.querySelector('.tabla-alumnos tbody');
+    tbody.innerHTML = ''; // Eliminar todas las filas existentes
 }
