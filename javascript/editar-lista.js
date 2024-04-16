@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    llenarTabla(grupoData.nombresAlumnos);
+                    llenarTabla(grupoData.nombresAlumnos,userId);
                 }
             });
         } else {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 });
 
-function llenarTabla(datos) {
+function llenarTabla(datos,userId) {
     const tbody = document.querySelector('.tabla-alumnos tbody');
     tbody.innerHTML = '';
     const nombresOrdenados = datos.sort();
@@ -62,12 +62,12 @@ function llenarTabla(datos) {
         row.appendChild(opcionesCell);
         tbody.appendChild(row);
 
-        btnEditar.addEventListener('click', () => editarFila(row));
+        btnEditar.addEventListener('click', () => editarFila(row,userId));
         btnEliminar.addEventListener('click', () => eliminarFila(row));
     });
 }
 
-function editarFila(fila) {
+function editarFila(fila,userId) {
     console.log(fila);
     const celdaApellidos = fila.querySelector('td:nth-child(2)');
     const celdaNombre = fila.querySelector('td:nth-child(3)');
@@ -95,10 +95,10 @@ function editarFila(fila) {
     btnAceptarCambios.textContent = 'Aceptar';
     btnAceptarCambios.classList.add('btnAceptarCambios');
     fila.querySelector('td:last-child').appendChild(btnAceptarCambios);
-    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila));
+    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila,userId));
 }
 
-function aceptarCambios(fila) {
+function aceptarCambios(fila,userId) {
     const celdaApellidos = fila.querySelector('td:nth-child(2) input');
     const celdaNombre = fila.querySelector('td:nth-child(3) input');
 
@@ -111,5 +111,5 @@ function aceptarCambios(fila) {
 
     // Eliminar botón de aceptar cambios
     fila.querySelector('.btnAceptarCambios').remove();
-    console.log(userID);
+    console.log(userId);
 }
