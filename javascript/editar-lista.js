@@ -102,6 +102,9 @@ function aceptarCambios(fila,userId,anteriorValor) {
     const celdaApellidos = fila.querySelector('td:nth-child(2) input');
     const celdaNombre = fila.querySelector('td:nth-child(3) input');
 
+    const nombreCompleto = celdaNombre + ' ' + celdaApellidos;
+    console.log(nombreCompleto)
+
     fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
     fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
 
