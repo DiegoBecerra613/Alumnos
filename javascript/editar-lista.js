@@ -95,4 +95,20 @@ function editarFila(fila) {
     btnAceptarCambios.textContent = 'Aceptar';
     btnAceptarCambios.classList.add('btnAceptarCambios');
     fila.querySelector('td:last-child').appendChild(btnAceptarCambios);
+    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila));
+}
+
+function aceptarCambios(fila) {
+    const celdaApellidos = fila.querySelector('td:nth-child(2) input');
+    const celdaNombre = fila.querySelector('td:nth-child(3) input');
+
+    fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
+    fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
+
+    // Mostrar botones de editar y eliminar
+    fila.querySelector('.btnEditar').style.display = 'inline-block';
+    fila.querySelector('.btnEliminar').style.display = 'inline-block';
+
+    // Eliminar botón de aceptar cambios
+    fila.querySelector('.btnAceptarCambios').remove();
 }
