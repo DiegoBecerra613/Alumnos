@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const db = getFirestore(app);
     const auth = getAuth(); // Obtener la instancia de autenticación
     const cuerpo = document.querySelector('body');
-
+    const tablaBody = document.querySelector('.tabla-alumnos tbody'); // Definir la variable tablaBody
 
     onAuthStateChanged(auth, async function (user) {
         if (user) {
@@ -27,6 +27,27 @@ document.addEventListener("DOMContentLoaded", async function () {
                 if (grupoData.userID === userId) {
                     console.log(grupoData.nombresAlumnos);
                 }
+                const nombresAlumnos = grupoData.nombresAlumnos;
+                if (Array.isArray(nombresAlumnos)) {
+                    nombresAlumnos.forEach((nombreCompleto, index) => {
+                        const [primerApellido, segundoApellido, ...nombres] = nombreCompleto.split(' ');
+                        const nombre = nombres.join(' ');
+                        const fila = document.createElement('tr');
+                        fila.innerHTML = `
+                            <td>${index + 1}</td>
+                            <td>${primerApellido} ${segundoApellido}</td>
+                            <td>${nombre}</td>
+                            <td class="opciones">
+                                <button class="btnEditar">Editar</button>
+                                <button class="btnEliminar">Eliminar</button>
+                            </td>
+                        `;
+                        tablaBody.appendChild(fila);
+                    });
+                } else {
+                    console.log("El campo 'nombresAlumnos' no es un array.");
+                }
+
             });
         } else {
             console.log("Usuario no autenticado.");
