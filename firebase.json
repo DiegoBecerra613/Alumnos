@@ -19,7 +19,7 @@
       },
       {
         "source": "/TomarAsistencias",
-        "destination": "/tomar-asistencias.html"
+        "destination": "/editar-lista.html"
       },
       {
         "source": "**",
@@ -27,7 +27,7 @@
       },
       {
         "source": "/EditarLista",
-        "destination": "/tomar-asistencias.html"
+        "destination": "/editar-lista.html"
       }
     ],
     "public": "./",
