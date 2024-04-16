@@ -102,12 +102,11 @@ function aceptarCambios(fila,userId,anteriorValor) {
     const celdaApellidos = fila.querySelector('td:nth-child(2) input');
     const celdaNombre = fila.querySelector('td:nth-child(3) input');
 
-    const nombreCompleto = `${apellido} ${nombre}`;
-    console.log(nombreCompleto)
-
     fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
     fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
 
+    const nombreCompleto = celdaApellidos.value+" "+celdaNombre.value;
+    console.log(nombreCompleto);
     // Mostrar botones de editar y eliminar
     fila.querySelector('.btnEditar').style.display = 'inline-block';
     fila.querySelector('.btnEliminar').style.display = 'inline-block';
