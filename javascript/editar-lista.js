@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
     onAuthStateChanged(auth, async function (user) {
-        console.log(user)
+        console.log(user.uid)
     });
 });
