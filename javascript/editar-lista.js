@@ -19,6 +19,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
     onAuthStateChanged(auth, async function (user) {
-        console.log(user.uid)
+        if (user) {
+            const userId = user.uid;
+            const querySnapshot = await getDocs(collection(db, 'grupos'));
+            querySnapshot.forEach((doc) => {
+                const grupoData = doc.data();
+                if (grupoData.userID === userId) {
+                    console.log(grupoData.nombresAlumnos);
+                }
+            });
+        } else {
+            console.log("Usuario no autenticado.");
+        }
     });
 });
