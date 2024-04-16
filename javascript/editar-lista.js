@@ -19,35 +19,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
     onAuthStateChanged(auth, async function (user) {
-        if (user) {
-            cuerpo.classList.add('autenticado');
-            const gruposQuerySnapshot = await getDocs(query(collection(db, 'grupos'), where('userID', '==', user.uid)));
-            if (gruposQuerySnapshot) {
-                gruposQuerySnapshot.forEach(async (grupoDoc) => {
-                    const apellidosNombresAlumnos = grupoDoc.data().apellidosNombresAlumnos; // Obtener los apellidos y nombres de los alumnos
-                    const tablaAlumnos = document.querySelector('.tabla-alumnos tbody');
-                    tablaAlumnos.innerHTML = ''; // Limpiar las filas existentes
-                    apellidosNombresAlumnos.forEach(async (apellidosNombres) => {
-                        const tr = document.createElement('tr');
-                        const tdNumero = document.createElement('td');
-                        const tdApellidos = document.createElement('td');
-                        const tdNombres = document.createElement('td');
-                        tdNumero.textContent = apellidosNombresAlumnos.indexOf(apellidosNombres) + 1; // Asignar el número de lista
-                        const [apellidos, nombres] = apellidosNombres.split(' '); // Separar apellidos y nombres
-                        tdApellidos.textContent = apellidos; // Asignar los apellidos
-                        tdNombres.textContent = nombres; // Asignar los nombres
-                        tr.appendChild(tdNumero);
-                        tr.appendChild(tdApellidos);
-                        tr.appendChild(tdNombres);
-                        tablaAlumnos.appendChild(tr);
-                    });
-                });
-            } else {
-                console.log("No se encontraron grupos asociados al usuario.");
-            }
-        } else {
-            cuerpo.classList.remove('autenticado');
-            window.location.href = 'index';
-        }
+        console.log(user)
     });
 });
