@@ -116,35 +116,20 @@ function aceptarCambios(fila,userId,anteriorValor,db) {
 }
 
 async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
-    const gruposSnapshot = await getDocs(collection(db, 'grupos'));
-    gruposSnapshot.forEach(async (grupo) => {
-        const dataGrupo = grupo.data();
-        if (dataGrupo.userID === userId) {
-            // Actualizar en la colección 'grupos'
-            dataGrupo.nombresAlumnos.forEach(async (nombre, index) => {
+    const querySnapshot = await getDocs(collection(db, 'grupos'));
+    querySnapshot.forEach(async (doc) => {
+        const data = doc.data();
+        if (data.userID === userId) {
+            data.nombresAlumnos.forEach(async (nombre, index) => {
                 if (nombre === anteriorValor) {
                     // Actualizar el valor
-                    dataGrupo.nombresAlumnos[index] = nuevoValor;
+                    data.nombresAlumnos[index] = nuevoValor;
                     // Actualizar el documento en Firebase
-                    await updateDoc(grupo.ref, { nombresAlumnos: dataGrupo.nombresAlumnos });
-                    console.log("Actualizado en grupos");
+                    await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
+                    console.log(data.grado+""+data.grupo);
                 }
-            });
-
-            // Actualizar en la subcolección 'lista'
-            const listaSnapshot = await getDocs(collection(grupo.ref, 'lista'));
-            listaSnapshot.forEach(async (lista) => {
-                const dataLista = lista.data();
-                dataLista.nombresAlumnos.forEach(async (nombre, index) => {
-                    if (nombre === anteriorValor) {
-                        // Actualizar el valor
-                        dataLista.nombresAlumnos[index] = nuevoValor;
-                        // Actualizar el documento en Firebase
-                        await updateDoc(lista.ref, { nombresAlumnos: dataLista.nombresAlumnos });
-                        console.log("Actualizado en lista");
-                    }
-                });
             });
         }
     });
 }
+
