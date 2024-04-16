@@ -24,6 +24,10 @@
       {
         "source": "**",
         "destination": "/404.html"
+      },
+      {
+        "source": "/EditarLista",
+        "destination": "/editar-lista.html"
       }
     ],
     "public": "./",
