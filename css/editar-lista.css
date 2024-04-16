@@ -2015,7 +2015,7 @@ body {
   overflow-y: auto; /* Habilitar el desplazamiento vertical si hay más elementos */
 }
 .tabla-alumnos {
-  width: 60%;
+  width: 80%;
   border-collapse: collapse;
   margin: 20px 0;
   border-collapse: separate;
