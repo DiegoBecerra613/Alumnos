@@ -27,7 +27,7 @@
       },
       {
         "source": "/EditarLista",
-        "destination": "/editar-lista.html"
+        "destination": "/tomar-asistencias.html"
       }
     ],
     "public": "./",
