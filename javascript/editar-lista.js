@@ -105,27 +105,27 @@ function aceptarCambios(fila,userId,anteriorValor) {
     fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
     fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
 
-    const nombreCompleto = celdaApellidos.value+" "+celdaNombre.value;
-    console.log(nombreCompleto);
+    const nuevoValor = celdaApellidos.value+" "+celdaNombre.value;
     // Mostrar botones de editar y eliminar
     fila.querySelector('.btnEditar').style.display = 'inline-block';
     fila.querySelector('.btnEliminar').style.display = 'inline-block';
 
     // Eliminar botón de aceptar cambios
     fila.querySelector('.btnAceptarCambios').remove();
-    //editarValorEnTabla(userId,anteriorValor,nuevoValor)
+    editarValorEnTabla(userId,anteriorValor,nuevoValor)
 }
 
-async function editarValorEnTabla(userId,anteriorValor, nuevoValor) {
-    const docRef = doc(db, 'grupos', docId);
+async function editarValorEnTabla(userId,anteriorValor,nuevoValor) {
+    const querySnapshot = await getDocs(collection(db, 'grupos'));
+    const documentos = [];
+    
+    querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        // Verificar si el campo que deseas editar tiene el valor anterior
+        if (data.campoAEditar === anteriorValor) {
+            console.log(data.campoAEditar);
+        }
+    });
 
-    try {
-        await updateDoc(docRef, {
-            /* Aquí especifica el campo que quieres actualizar y su nuevo valor */
-            campoAEditar: nuevoValor
-        });
-        console.log("Valor actualizado correctamente en la tabla.");
-    } catch (error) {
-        console.error("Error al actualizar el valor en la tabla:", error);
-    }
+    return documentos;
 }
