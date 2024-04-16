@@ -67,18 +67,21 @@ function llenarTabla(datos,userId) {
     });
 }
 
-function editarFila(fila,userId) {
-    console.log(fila);
+function editarFila(fila, userId) {
     const celdaApellidos = fila.querySelector('td:nth-child(2)');
     const celdaNombre = fila.querySelector('td:nth-child(3)');
 
+    // Guardar los valores actuales antes de la edición
+    const valorAnteriorApellidos = celdaApellidos.textContent;
+    const valorAnteriorNombre = celdaNombre.textContent;
+
     const inputApellidos = document.createElement('input');
     inputApellidos.type = 'text';
-    inputApellidos.value = celdaApellidos.textContent;
+    inputApellidos.value = valorAnteriorApellidos;
 
     const inputNombre = document.createElement('input');
     inputNombre.type = 'text';
-    inputNombre.value = celdaNombre.textContent;
+    inputNombre.value = valorAnteriorNombre;
 
     celdaApellidos.innerHTML = '';
     celdaNombre.innerHTML = '';
@@ -95,21 +98,30 @@ function editarFila(fila,userId) {
     btnAceptarCambios.textContent = 'Aceptar';
     btnAceptarCambios.classList.add('btnAceptarCambios');
     fila.querySelector('td:last-child').appendChild(btnAceptarCambios);
-    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila,userId));
+    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila, userId, valorAnteriorApellidos, valorAnteriorNombre));
 }
 
-function aceptarCambios(fila,userId) {
-    const celdaApellidos = fila.querySelector('td:nth-child(2) input');
-    const celdaNombre = fila.querySelector('td:nth-child(3) input');
+async function aceptarCambios(fila, userId, valorAnteriorApellidos, valorAnteriorNombre) {
+    const celdaApellidos = fila.querySelector('td:nth-child(2) input').value;
+    const celdaNombre = fila.querySelector('td:nth-child(3) input').value;
 
-    fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
-    fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
+    const grupoRef = doc(db, 'grupos', userId); // Referencia al documento en Firestore
 
-    // Mostrar botones de editar y eliminar
+    try {
+        await updateDoc(grupoRef, {
+            // Actualizar los campos 'nombresAlumnos' del documento
+            nombresAlumnos: firebase.firestore.FieldValue.arrayRemove(`${valorAnteriorApellidos} ${valorAnteriorNombre}`),
+            nombresAlumnos: firebase.firestore.FieldValue.arrayUnion(`${celdaApellidos} ${celdaNombre}`)
+        });
+        console.log("Documento actualizado correctamente");
+    } catch (error) {
+        console.error("Error al actualizar el documento:", error);
+    }
+
+    // Restaurar la visualización original de la fila
+    fila.querySelector('td:nth-child(2)').textContent = celdaApellidos;
+    fila.querySelector('td:nth-child(3)').textContent = celdaNombre;
     fila.querySelector('.btnEditar').style.display = 'inline-block';
     fila.querySelector('.btnEliminar').style.display = 'inline-block';
-
-    // Eliminar botón de aceptar cambios
     fila.querySelector('.btnAceptarCambios').remove();
-    console.log(userId);
 }
