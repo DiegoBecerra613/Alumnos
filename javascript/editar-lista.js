@@ -19,20 +19,25 @@ document.addEventListener("DOMContentLoaded", async function () {
     const tablaBody = document.querySelector('.tabla-alumnos tbody'); // Definir la variable tablaBody
 
     onAuthStateChanged(auth, async function (user) {
+        console.log("onAuthStateChanged", user);
         if (user) {
             const userId = user.uid;
             const querySnapshot = await getDocs(collection(db, 'grupos'));
+            console.log("querySnapshot", querySnapshot);
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
-                if (grupoData.userID === userId) {
-                    console.log(grupoData.nombresAlumnos);
-                }
                 const nombresAlumnos = grupoData.nombresAlumnos;
+                console.log("nombresAlumnos", nombresAlumnos);
                 if (Array.isArray(nombresAlumnos)) {
                     nombresAlumnos.forEach((nombreCompleto, index) => {
                         const [primerApellido, segundoApellido, ...nombres] = nombreCompleto.split(' ');
                         const nombre = nombres.join(' ');
+                        console.log("nombreCompleto", nombreCompleto);
+                        console.log("primerApellido", primerApellido);
+                        console.log("segundoApellido", segundoApellido);
+                        console.log("nombres", nombres);
                         const fila = document.createElement('tr');
+                        console.log("fila", fila);
                         fila.innerHTML = `
                             <td>${index + 1}</td>
                             <td>${primerApellido} ${segundoApellido}</td>
@@ -42,15 +47,16 @@ document.addEventListener("DOMContentLoaded", async function () {
                                 <button class="btnEliminar">Eliminar</button>
                             </td>
                         `;
+                        console.log("fila.innerHTML", fila.innerHTML);
                         tablaBody.appendChild(fila);
                     });
                 } else {
                     console.log("El campo 'nombresAlumnos' no es un array.");
                 }
-
             });
         } else {
             console.log("Usuario no autenticado.");
         }
     });
+
 });
