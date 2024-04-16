@@ -16,44 +16,17 @@ document.addEventListener("DOMContentLoaded", async function () {
     const db = getFirestore(app);
     const auth = getAuth(); // Obtener la instancia de autenticación
     const cuerpo = document.querySelector('body');
-    const tablaBody = document.querySelector('.tabla-alumnos tbody'); // Definir la variable tablaBody
+
 
     onAuthStateChanged(auth, async function (user) {
         if (user) {
             const userId = user.uid;
-            console.log("userId:", userId);
-
             const querySnapshot = await getDocs(collection(db, 'grupos'));
-            console.log("querySnapshot:", querySnapshot);
-
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
-                console.log("grupoData:", grupoData);
-
                 if (grupoData.userID === userId) {
-                    const nombresAlumnos = grupoData.nombresAlumnos;
-                    console.log("nombresAlumnos:", nombresAlumnos);
-
-                    if (Array.isArray(nombresAlumnos)) {
-                        nombresAlumnos.forEach((nombreCompleto, index) => {
-                            const [primerApellido, segundoApellido, ...nombres] = nombreCompleto.split(' ');
-                            const nombre = nombres.join(' ');
-
-                            const fila = document.createElement('tr');
-                            fila.innerHTML = `
-                                <td>${index + 1}</td>
-                                <td>${primerApellido} ${segundoApellido}</td>
-                                <td>${nombre}</td>
-                                <td class="opciones">
-                                    <button class="btnEditar">Editar</button>
-                                    <button class="btnEliminar">Eliminar</button>
-                                </td>
-                            `;
-                            tablaBody.appendChild(fila);
-                        });
-                    } else {
-                        console.log("El campo 'nombresAlumnos' no es un array.");
-                    }
+                    console.log(grupoData.nombresAlumnos);
+                    // Aquí puedes hacer lo que necesites con los nombres de los alumnos
                 }
             });
         } else {
