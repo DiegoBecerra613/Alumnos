@@ -154,9 +154,9 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
                     if (subKey === anteriorValor) {
                         console.log('Valor encontrado');
                         encontrado = true;
-                        data[key][nuevoValor]=data[key][subKey];
-                        delete data[key][subKey];
-                        //data[key] = nuevoValor;
+                        const updatedData = { ...data[key], [nuevoValor]: data[key][subKey] };
+                        delete updatedData[anteriorValor];
+                        data[key] = updatedData;
                     }
                 });
             } else {
