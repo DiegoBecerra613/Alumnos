@@ -117,7 +117,7 @@ function aceptarCambios(fila, userId, anteriorValor, db) {
 
 async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
     const querySnapshot = await getDocs(collection(db, 'grupos'));
-    for (const doc of querySnapshot) {
+    querySnapshot.forEach(async (doc) => {
         const data = doc.data();
         if (data.userID === userId) {
             data.nombresAlumnos.forEach(async (nombre, index) => {
@@ -132,7 +132,7 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                 }
             });
         }
-    }
+    });
 }
 
 async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
