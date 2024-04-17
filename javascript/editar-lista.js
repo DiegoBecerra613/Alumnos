@@ -31,8 +31,43 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             console.log("Usuario no autenticado.");
         }
+        const grupo = grupoData.grado + " " + grupoData.grupo;
+        document.querySelector('.btnRegistrar').addEventListener('click', registrar(db, grupo));
+
     });
 });
+
+async function registrar(db, grupo) {
+    const apellidos = document.getElementsByName('apellidos');
+    const nombre = document.getElementsByName('nombre');
+    const nuevoValor= apellidos + " " + nombre;
+    const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
+    const listaDoc = await getDoc(listaDocRef);
+    const data = listaDoc.data();
+    if (data) {
+        Object.keys(data).forEach(key => {
+            console.log(`Valores en nivel ${key}:`);
+            if (typeof data[key] === 'object' && data[key] !== null) {
+                Object.keys(data[key]).forEach(subKey => {
+                    console.log(nuevoValor);
+                    //data[key][nuevoValor] = data[key][subKey]; // Agrega la nueva clave con el mismo valor
+                });
+            } else {
+                console.log(`   ${data[key]}`);
+            }
+        });
+
+        if (encontrado) {
+            // Guarda los cambios en la base de datos
+            await setDoc(listaDocRef, data);
+            console.log('Valor modificado correctamente.');
+        } else {
+            console.log('El valor especificado no fue encontrado.');
+        }
+    } else {
+        console.log('No hay datos disponibles en el nivel especificado.');
+    }
+}
 
 function llenarTabla(datos, userId, db) {
     const tbody = document.querySelector('.tabla-alumnos tbody');
@@ -127,8 +162,8 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     // Actualizar el documento en Firebase
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
                     console.log(data.grado + "" + data.grupo);
-                    const grupo=data.grado + "" + data.grupo;
-                    editarValorEnMap(db,anteriorValor,nuevoValor,grupo);
+                    const grupo = data.grado + "" + data.grupo;
+                    editarValorEnMap(db, anteriorValor, nuevoValor, grupo);
                 }
             });
         }
@@ -145,7 +180,7 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
 
         Object.keys(data).forEach(key => {
             console.log(`Valores en nivel ${key}:`);
-            
+
             // Verifica si el valor en este nivel es un objeto
             if (typeof data[key] === 'object' && data[key] !== null) {
                 // Itera sobre las propiedades del objeto
@@ -157,7 +192,7 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
                         data[key][nuevoValor] = data[key][subKey]; // Agrega la nueva clave con el mismo valor
                         delete data[key][subKey]; // Elimina la clave antigua
                     }
-                    
+
                 });
             } else {
                 console.log(`   ${data[key]}`);
@@ -175,9 +210,3 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
         console.log('No hay datos disponibles en el nivel especificado.');
     }
 }
-
-
-
-
-
-
