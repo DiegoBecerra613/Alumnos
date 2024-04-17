@@ -128,7 +128,7 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
                     console.log(data.grado + "" + data.grupo);
                     const grupo=data.grado + "" + data.grupo;
-                    //editarValorEnMap(db,anteriorValor,nuevoValor,grupo);
+                    editarValorEnMap(db,anteriorValor,nuevoValor,grupo);
                 }
             });
         }
