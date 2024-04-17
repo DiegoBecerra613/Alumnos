@@ -141,25 +141,40 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
     const data = listaDoc.data();
 
     if (data) {
+        let encontrado = false;
+
         Object.keys(data).forEach(key => {
             console.log(`Valores en nivel ${key}:`);
+            
             // Verifica si el valor en este nivel es un objeto
             if (typeof data[key] === 'object' && data[key] !== null) {
                 // Itera sobre las propiedades del objeto
                 Object.keys(data[key]).forEach(subKey => {
-                    console.log(`${subKey}`);
-                    if(subKey==anteriorValor){
-                        console.log('valor encontrado')
+                    console.log(`${subKey}: ${data[key][subKey]}`);
+                    if (subKey === anteriorValor) {
+                        console.log('Valor encontrado');
+                        encontrado = true;
+                        // Modifica el valor encontrado
+                        data[key][subKey] = nuevoValor;
                     }
                 });
             } else {
                 console.log(`   ${data[key]}`);
             }
         });
+
+        if (encontrado) {
+            // Guarda los cambios en la base de datos
+            await setDoc(listaDocRef, data);
+            console.log('Valor modificado correctamente.');
+        } else {
+            console.log('El valor especificado no fue encontrado.');
+        }
     } else {
         console.log('No hay datos disponibles en el nivel especificado.');
     }
 }
+
 
 
 
