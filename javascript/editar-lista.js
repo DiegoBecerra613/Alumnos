@@ -117,7 +117,7 @@ function aceptarCambios(fila, userId, anteriorValor, db) {
 
 async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
     const querySnapshot = await getDocs(collection(db, 'grupos'));
-    querySnapshot.forEach(async (doc) => {
+    for (const doc of querySnapshot) {
         const data = doc.data();
         if (data.userID === userId) {
             data.nombresAlumnos.forEach(async (nombre, index) => {
@@ -127,12 +127,12 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     // Actualizar el documento en Firebase
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
                     console.log(data.grado + "" + data.grupo);
-                    grupo=data.grado + "" + data.grupo;
+                    const grupo=data.grado + "" + data.grupo;
                     editarValorEnMap(db,anteriorValor,nuevoValor,grupo);
                 }
             });
         }
-    });
+    }
 }
 
 async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
