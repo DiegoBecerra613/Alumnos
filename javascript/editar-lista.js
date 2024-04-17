@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             const querySnapshot = await getDocs(collection(db, 'grupos'));
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
+                const grupo = grupoData.grado + " " + grupoData.grupo;
+                document.querySelector('.btnRegistrar').addEventListener('click', registrar(db, grupo));
                 if (grupoData.userID === userId) {
                     llenarTabla(grupoData.nombresAlumnos, userId, db);
                 }
@@ -31,8 +33,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             console.log("Usuario no autenticado.");
         }
-        const grupo = grupoData.grado + " " + grupoData.grupo;
-        document.querySelector('.btnRegistrar').addEventListener('click', registrar(db, grupo));
 
     });
 });
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function registrar(db, grupo) {
     const apellidos = document.getElementsByName('apellidos');
     const nombre = document.getElementsByName('nombre');
-    const nuevoValor= apellidos + " " + nombre;
+    const nuevoValor = apellidos + " " + nombre;
     const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
     const listaDoc = await getDoc(listaDocRef);
     const data = listaDoc.data();
