@@ -135,7 +135,7 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
     });
 }
 
-async function editarValorEnTabla(db, anteriorValor, nuevoValor, grupo) {
+async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
     const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
     const listaDoc = await getDoc(listaDocRef);
     const data = listaDoc.data();
