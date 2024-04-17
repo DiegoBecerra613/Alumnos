@@ -147,8 +147,8 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
             if (typeof data[key] === 'object' && data[key] !== null) {
                 // Itera sobre las propiedades del objeto
                 Object.keys(data[key]).forEach(subKey => {
-                    console.log(`   ${subKey}: ${data[key][subKey][0]}`);
-                    if(data[key][subKey][0]==anteriorValor){
+                    console.log(`${subKey}`);
+                    if(subKey==anteriorValor){
                         console.log('valor encontrado')
                     }
                 });
