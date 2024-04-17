@@ -140,12 +140,18 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
     const listaDoc = await getDoc(listaDocRef);
     const data = listaDoc.data();
 
-    // Verifica si data tiene contenido y no es nulo
     if (data) {
-        // Itera sobre las claves (keys) en el objeto data
         Object.keys(data).forEach(key => {
-            // Imprime el valor asociado a cada clave
-            console.log(`Valor en nivel ${key}: ${data[key]}`);
+            console.log(`Valores en nivel ${key}:`);
+            // Verifica si el valor en este nivel es un objeto
+            if (typeof data[key] === 'object' && data[key] !== null) {
+                // Itera sobre las propiedades del objeto
+                Object.keys(data[key]).forEach(subKey => {
+                    console.log(`   ${subKey}: ${data[key][subKey]}`);
+                });
+            } else {
+                console.log(`   ${data[key]}`);
+            }
         });
     } else {
         console.log('No hay datos disponibles en el nivel especificado.');
