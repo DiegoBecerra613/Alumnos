@@ -148,17 +148,20 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
             
             // Verifica si el valor en este nivel es un objeto
             if (typeof data[key] === 'object' && data[key] !== null) {
-                // Itera sobre las propiedades del objeto
-                Object.keys(data[key]).forEach(subKey => {
-                    console.log(`${subKey}: ${data[key][subKey]}`);
-                    if (subKey === anteriorValor) {
-                        console.log('Valor encontrado');
-                        encontrado = true;
-                        // Modifica el valor encontrado
-                        //data[key] = nuevoValor;
-                        console.log(`${data[key]} modificado a ${nuevoValor}`)
-                    }
-                });
+                // Verifica si la clave actual es la que se desea cambiar
+                if (key === anteriorValor) {
+                    console.log('Valor encontrado');
+                    encontrado = true;
+                    // Crea una nueva clave con el nuevo nombre y mantiene su contenido
+                    data[nuevoValor] = data[key];
+                    // Elimina la clave anterior
+                    delete data[key];
+                } else {
+                    // Itera sobre las propiedades del objeto
+                    Object.keys(data[key]).forEach(subKey => {
+                        console.log(`${subKey}: ${data[key][subKey]}`);
+                    });
+                }
             } else {
                 console.log(`   ${data[key]}`);
             }
@@ -175,6 +178,7 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
         console.log('No hay datos disponibles en el nivel especificado.');
     }
 }
+
 
 
 
