@@ -154,10 +154,10 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
                     if (subKey === anteriorValor) {
                         console.log('Valor encontrado');
                         encontrado = true;
-                        const updatedData = { ...data[key], [nuevoValor]: data[key][subKey] };
-                        delete updatedData[anteriorValor];
-                        data[key] = updatedData;
+                        data[key][nuevoValor] = data[key][subKey]; // Agrega la nueva clave con el mismo valor
+                        delete data[key][subKey]; // Elimina la clave antigua
                     }
+                    
                 });
             } else {
                 console.log(`   ${data[key]}`);
