@@ -141,21 +141,21 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
     const data = listaDoc.data();
 
     if (data) {
-        // Itera sobre las claves en el objeto data
-        Object.keys(data).forEach(key => {
-            // Verifica si el valor en este nivel es un objeto
-            if (typeof data[key] === 'object' && data[key] !== null) {
-                // Itera sobre los elementos en este nivel
-                Object.keys(data[key]).forEach(subKey => {
-                    // Verifica si el valor coincide con el anteriorValor
-                    if (data[key][subKey] === anteriorValor) {
-                        // Reemplaza el valor con el nuevoValor
-                        data[key][subKey] = nuevoValor;
+        // Función recursiva para buscar y modificar el valor en todos los niveles
+        const buscarYModificar = (objeto) => {
+            Object.keys(objeto).forEach(key => {
+                if (typeof objeto[key] === 'object' && objeto[key] !== null) {
+                    buscarYModificar(objeto[key]); // Llamada recursiva para niveles anidados
+                } else {
+                    if (objeto[key] === anteriorValor) {
+                        //objeto[key] = nuevoValor;
                         console.log(`Se ha modificado '${anteriorValor}' por '${nuevoValor}' en el nivel ${key}.`);
                     }
-                });
-            }
-        });
+                }
+            });
+        };
+
+        buscarYModificar(data); // Inicia la búsqueda y modificación
 
         // Ahora actualizamos los datos en Firestore
         await setDoc(listaDocRef, data);
