@@ -125,11 +125,10 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     // Actualizar el valor
                     data.nombresAlumnos[index] = nuevoValor;
                     // Actualizar el documento en Firebase
-                    await setDoc(listaDocRef, data);
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
                     console.log(data.grado + "" + data.grupo);
                     const grupo=data.grado + "" + data.grupo;
-                    editarValorEnMap(db,anteriorValor,nuevoValor,grupo);
+                    //editarValorEnMap(db,anteriorValor,nuevoValor,grupo);
                 }
             });
         }
