@@ -142,16 +142,16 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
 
     if (data) {
         // Función recursiva para buscar y modificar el valor en todos los niveles
-        const buscarYModificar = (objeto) => {
+        const buscarYModificar = (objeto, nivel = "") => {
             Object.keys(objeto).forEach(key => {
                 if (typeof objeto[key] === 'object' && objeto[key] !== null) {
-                    buscarYModificar(objeto[key]); // Llamada recursiva para niveles anidados
-                    console.log("Si entro "+objeto[key])
+                    buscarYModificar(objeto[key], nivel + "->" + key); // Llamada recursiva para niveles anidados
+                    console.log("Si entro: " + objeto[key]);
                 } else {
-                    console.log("No entro "+objeto[key])
+                    console.log("No entro: " + objeto[key]);
                     if (objeto[key] === anteriorValor) {
                         //objeto[key] = nuevoValor;
-                        console.log(`Se ha modificado '${anteriorValor}' por '${nuevoValor}' en el nivel ${key}.`);
+                        console.log(`Se ha modificado '${anteriorValor}' por '${nuevoValor}' en el nivel ${nivel}->${key}.`);
                     }
                 }
             });
@@ -165,6 +165,7 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
         console.log('No hay datos disponibles en el nivel especificado.');
     }
 }
+
 
 
 
