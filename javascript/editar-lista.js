@@ -146,7 +146,9 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
             Object.keys(objeto).forEach(key => {
                 if (typeof objeto[key] === 'object' && objeto[key] !== null) {
                     buscarYModificar(objeto[key]); // Llamada recursiva para niveles anidados
+                    console.log("Si entro "+objeto[key])
                 } else {
+                    console.log("No entro "+objeto[key])
                     if (objeto[key] === anteriorValor) {
                         //objeto[key] = nuevoValor;
                         console.log(`Se ha modificado '${anteriorValor}' por '${nuevoValor}' en el nivel ${key}.`);
