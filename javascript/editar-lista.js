@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
                 if (grupoData.userID === userId) {
-                    llenarTabla(grupoData.nombresAlumnos,userId,db);
+                    llenarTabla(grupoData.nombresAlumnos, userId, db);
                 }
             });
         } else {
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 });
 
-function llenarTabla(datos,userId,db) {
+function llenarTabla(datos, userId, db) {
     const tbody = document.querySelector('.tabla-alumnos tbody');
     tbody.innerHTML = '';
     const nombresOrdenados = datos.sort();
@@ -62,15 +62,15 @@ function llenarTabla(datos,userId,db) {
         row.appendChild(opcionesCell);
         tbody.appendChild(row);
 
-        btnEditar.addEventListener('click', () => editarFila(row,userId,db));
+        btnEditar.addEventListener('click', () => editarFila(row, userId, db));
         btnEliminar.addEventListener('click', () => eliminarFila(row));
     });
 }
 
-function editarFila(fila,userId,db) {
+function editarFila(fila, userId, db) {
     const celdaApellidos = fila.querySelector('td:nth-child(2)');
     const celdaNombre = fila.querySelector('td:nth-child(3)');
-    const anteriorValor = celdaApellidos.textContent + " "+ celdaNombre.textContent;
+    const anteriorValor = celdaApellidos.textContent + " " + celdaNombre.textContent;
 
     const inputApellidos = document.createElement('input');
     inputApellidos.type = 'text';
@@ -95,24 +95,24 @@ function editarFila(fila,userId,db) {
     btnAceptarCambios.textContent = 'Aceptar';
     btnAceptarCambios.classList.add('btnAceptarCambios');
     fila.querySelector('td:last-child').appendChild(btnAceptarCambios);
-    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila,userId,anteriorValor,db));
+    btnAceptarCambios.addEventListener('click', () => aceptarCambios(fila, userId, anteriorValor, db));
 }
 
-function aceptarCambios(fila,userId,anteriorValor,db) {
+function aceptarCambios(fila, userId, anteriorValor, db) {
     const celdaApellidos = fila.querySelector('td:nth-child(2) input');
     const celdaNombre = fila.querySelector('td:nth-child(3) input');
 
     fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
     fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
 
-    const nuevoValor = celdaApellidos.value+" "+celdaNombre.value;
+    const nuevoValor = celdaApellidos.value + " " + celdaNombre.value;
     // Mostrar botones de editar y eliminar
     fila.querySelector('.btnEditar').style.display = 'inline-block';
     fila.querySelector('.btnEliminar').style.display = 'inline-block';
 
     // Eliminar botón de aceptar cambios
     fila.querySelector('.btnAceptarCambios').remove();
-    editarValorEnTabla(db,userId,anteriorValor,nuevoValor)
+    editarValorEnTabla(db, userId, anteriorValor, nuevoValor)
 }
 
 async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
@@ -126,26 +126,29 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     data.nombresAlumnos[index] = nuevoValor;
                     // Actualizar el documento en Firebase
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
-                    console.log(data.grado+""+data.grupo);
-                    consultarValorEnTabla(db, userId, data.grado+""+data.grupo)
+                    console.log(data.grado + "" + data.grupo);
+                    grupo=data.grado + "" + data.grupo;
+                    editarValorEnMap(db,anteriorValor,nuevoValor,grupo);
                 }
             });
         }
     });
 }
 
-async function consultarValorEnTabla(db, userId, docId) {
-    // Obtener el documento usando la variable docId de la colección 'grupos'
-    const docRef = doc(db, 'grupos', docId);
-    const docSnap = await getDoc(docRef);
+async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
+    const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
+    const listaDoc = await getDoc(listaDocRef);
+    const data = listaDoc.data();
 
-    if (docSnap.exists()) {
-        const data = docSnap.data();
-        if (data.userID === userId) {
-            console.log(data.lista3C);
-        }
+    // Verifica si data tiene contenido y no es nulo
+    if (data) {
+        // Itera sobre las claves (keys) en el objeto data
+        Object.keys(data).forEach(key => {
+            // Imprime el valor asociado a cada clave
+            console.log(`Valor en nivel ${key}: ${data[key]}`);
+        });
     } else {
-        console.log("No se encontró el documento!");
+        console.log('No hay datos disponibles en el nivel especificado.');
     }
 }
 
