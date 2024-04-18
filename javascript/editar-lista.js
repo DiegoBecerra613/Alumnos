@@ -43,17 +43,38 @@ async function registrar(userId, db) {
     var apellidos = apellidosInput.value;
     var nombreInput = document.querySelector('input[name="nombre"]');
     var nombre = nombreInput.value;
-    var nuevoNombre = apellidos+" "+nombre;
+    var nuevoNombre = apellidos + " " + nombre;
+    var grupo = "";
     const querySnapshot = await getDocs(collection(db, 'grupos'));
     querySnapshot.forEach(async (doc) => { // Se agrega async aquí para poder usar await dentro del forEach
         const grupoData = doc.data();
         if (grupoData.userID === userId) {
-            console.log(grupoData.grado);
-            console.log(grupoData.grupo);
+            grupo = grupoData.grado + grupoData.grupo;
             grupoData.nombresAlumnos.push(nuevoNombre);
             await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos }); // Se añade await aquí para asegurarse de que se espera la actualización antes de continuar
         }
     });
+    const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
+    const listaDoc = await getDoc(listaDocRef);
+    const data = listaDoc.data();
+
+    if (data) {
+
+        Object.keys(data).forEach(key => {
+            console.log(`Valores en nivel ${key}:`);
+            if (typeof data[key] === 'object' && data[key] !== null) {
+                Object.keys(data[key]).forEach(subKey => {
+                    data[key][nuevoNombre] = data[key][subKey];
+                    return;
+                });
+            } else {
+                console.log(`   ${data[key]}`);
+            }
+        });
+        await setDoc(listaDocRef, data);
+    } else {
+        console.log('No hay datos disponibles en el nivel especificado.');
+    }
 }
 
 function llenarTabla(datos, userId, db) {
