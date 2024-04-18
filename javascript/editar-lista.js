@@ -43,15 +43,15 @@ async function registrar(userId, db) {
     var apellidos = apellidosInput.value;
     var nombreInput = document.querySelector('input[name="nombre"]');
     var nombre = nombreInput.value;
+    var nuevoNombre = apellidos+" "+nombre;
     const querySnapshot = await getDocs(collection(db, 'grupos'));
     querySnapshot.forEach(async (doc) => { // Se agrega async aquí para poder usar await dentro del forEach
         const grupoData = doc.data();
         if (grupoData.userID === userId) {
-            console.log(apellidos+" "+nombre);
             console.log(grupoData.grado);
             console.log(grupoData.grupo);
-            //grupoData.nombresAlumnos.push('prueba hola');
-            //await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos }); // Se añade await aquí para asegurarse de que se espera la actualización antes de continuar
+            grupoData.nombresAlumnos.push(nuevoNombre);
+            await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos }); // Se añade await aquí para asegurarse de que se espera la actualización antes de continuar
         }
     });
 }
