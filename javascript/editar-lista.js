@@ -46,8 +46,10 @@ async function registrar(userId, db) {
             console.log(grupoData.nombresAlumnos[0]);
             console.log(grupoData.grado);
             console.log(grupoData.grupo);
+            grupoData.nombresAlumnos.push('prueba hola');
         }
     });
+    await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos });
 }
 
 function llenarTabla(datos, userId, db) {
