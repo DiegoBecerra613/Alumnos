@@ -75,6 +75,7 @@ async function registrar(userId, db) {
     } else {
         console.log('No hay datos disponibles en el nivel especificado.');
     }
+    location.reload();
 }
 
 function llenarTabla(datos, userId, db) {
