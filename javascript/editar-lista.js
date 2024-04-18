@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const db = getFirestore(app);
     const auth = getAuth(); // Obtener la instancia de autenticación
     const cuerpo = document.querySelector('body');
-    //const btnRegistrar = document.querySelector('.btnRegistrar');
+    const btnRegistrar = document.querySelector('.btnRegistrar');
 
 
     onAuthStateChanged(auth, async function (user) {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     llenarTabla(grupoData.nombresAlumnos, userId, db);
                 }
             });
-            //btnRegistrar.addEventListener('click', () => registrar(userId, db));
+            btnRegistrar.addEventListener('click', () => registrar(userId, db));
         } else {
             console.log("Usuario no autenticado.");
         }
