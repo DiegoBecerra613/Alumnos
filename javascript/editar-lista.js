@@ -39,6 +39,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 async function registrar(userId, db) {
     console.log('Funciona');
+    const querySnapshot = await getDocs(collection(db, 'grupos'));
+    querySnapshot.forEach((doc) => {
+        const grupoData = doc.data();
+        if (grupoData.userID === userId) {
+            console.log(grupoData.grado);
+            console.log(grupoData.grupo);
+        }
+    });
 }
 
 function llenarTabla(datos, userId, db) {
