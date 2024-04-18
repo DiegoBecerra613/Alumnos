@@ -43,6 +43,7 @@ async function registrar(userId, db) {
     querySnapshot.forEach((doc) => {
         const grupoData = doc.data();
         if (grupoData.userID === userId) {
+            console.log(grupoData.nombresAlumnos[0]);
             console.log(grupoData.grado);
             console.log(grupoData.grupo);
         }
