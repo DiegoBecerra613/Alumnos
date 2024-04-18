@@ -40,16 +40,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function registrar(userId, db) {
     console.log('Funciona');
     const querySnapshot = await getDocs(collection(db, 'grupos'));
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach(async (doc) => { // Se agrega async aquí para poder usar await dentro del forEach
         const grupoData = doc.data();
         if (grupoData.userID === userId) {
             console.log(grupoData.nombresAlumnos[0]);
             console.log(grupoData.grado);
             console.log(grupoData.grupo);
             grupoData.nombresAlumnos.push('prueba hola');
+            await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos }); // Se añade await aquí para asegurarse de que se espera la actualización antes de continuar
         }
     });
-    await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos });
 }
 
 function llenarTabla(datos, userId, db) {
