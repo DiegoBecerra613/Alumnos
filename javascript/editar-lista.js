@@ -25,12 +25,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             const querySnapshot = await getDocs(collection(db, 'grupos'));
             querySnapshot.forEach((doc) => {
                 const grupoData = doc.data();
-                const grupo = grupoData.grado + " " + grupoData.grupo;
-                btnRegistrar.addEventListener('click', registrar(db, grupo));
                 if (grupoData.userID === userId) {
                     llenarTabla(grupoData.nombresAlumnos, userId, db);
                 }
             });
+            btnRegistrar.addEventListener('click', () => registrar(userId, db));
         } else {
             console.log("Usuario no autenticado.");
         }
@@ -38,36 +37,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 });
 
-async function registrar(db, grupo) {
-    const apellidos = document.getElementsByName('apellidos');
-    const nombre = document.getElementsByName('nombre');
-    const nuevoValor = apellidos + " " + nombre;
-    const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
-    const listaDoc = await getDoc(listaDocRef);
-    const data = listaDoc.data();
-    if (data) {
-        Object.keys(data).forEach(key => {
-            console.log(`Valores en nivel ${key}:`);
-            if (typeof data[key] === 'object' && data[key] !== null) {
-                Object.keys(data[key]).forEach(subKey => {
-                    console.log(nuevoValor);
-                    //data[key][nuevoValor] = data[key][subKey]; // Agrega la nueva clave con el mismo valor
-                });
-            } else {
-                console.log(`   ${data[key]}`);
-            }
-        });
-
-        if (encontrado) {
-            // Guarda los cambios en la base de datos
-            await setDoc(listaDocRef, data);
-            console.log('Valor modificado correctamente.');
-        } else {
-            console.log('El valor especificado no fue encontrado.');
-        }
-    } else {
-        console.log('No hay datos disponibles en el nivel especificado.');
-    }
+async function registrar(userId, db) {
+    console.log('Funciona');
 }
 
 function llenarTabla(datos, userId, db) {
