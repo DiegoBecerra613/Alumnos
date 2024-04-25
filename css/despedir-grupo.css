@@ -1,0 +1,91 @@
+
+.despedir-grupo .texto-despedir-grupo {
+  margin: 0 0.5rem 5.6rem 0.5rem;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Termina Test', 'Roboto Condensed';
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000000;
+}
+.despedir-grupo .texto-grupo-actual {
+  margin: 0.2rem 1.5rem 0.1rem 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000000;
+}
+.despedir-grupo .texto-datos-grupo {
+  overflow-wrap: break-word;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #4461F2;
+}
+.despedir-grupo .container-3 {
+  margin-bottom: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.despedir-grupo .finalizar-ciclo-escolar {
+  overflow-wrap: break-word;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+.despedir-grupo .btn-eliminar {
+  border-radius: 0.6rem;
+  border: none;
+  background: #FA5252;
+  position: relative;
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.4rem 0.5rem 0.5rem 0.4rem;
+  box-sizing: border-box;
+}
+.despedir-grupo .rectangulo {
+  box-shadow: 0rem 0.3rem 0.3rem 0rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.6rem;
+  background: #FFFFFF;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.6rem 3.9rem 0.9rem 1.4rem;
+  width: 49.3rem;
+  box-sizing: border-box;
+}
+.despedir-grupo .contenedor-despedir-grupo {
+  margin: 2.1rem 1rem 51.1rem 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.despedir-grupo .saly-411 {
+  background: url('../assets/saly-41.png') 50% / cover no-repeat;
+  width: 31.3rem;
+  height: 31.3rem;
+}
+.despedir-grupo .saly-41 {
+  margin-top: 33.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 31.3rem;
+  height: 31.3rem;
+  box-sizing: border-box;
+}
+.despedir-grupo {
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+}
