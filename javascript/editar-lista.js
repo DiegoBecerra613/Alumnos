@@ -107,7 +107,7 @@ function llenarTabla(datos, userId, db) {
         tbody.appendChild(row);
 
         btnEditar.addEventListener('click', () => editarFila(row, userId, db));
-        btnEliminar.addEventListener('click', () => eliminarFila(row));
+        btnEliminar.addEventListener('click', () => eliminarValor(userId, db));
     });
 }
 
@@ -214,6 +214,56 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
             console.log('Valor modificado correctamente.');
         } else {
             console.log('El valor especificado no fue encontrado.');
+        }
+    } else {
+        console.log('No hay datos disponibles en el nivel especificado.');
+    }
+}
+
+async function eliminarValor(userId, db) {
+    const celdaApellidos = fila.querySelector('td:nth-child(2)');
+    const celdaNombre = fila.querySelector('td:nth-child(3)');
+    const anteriorValor = celdaApellidos.textContent + " " + celdaNombre.textContent;
+    const querySnapshot = await getDocs(collection(db, 'grupos'));
+    querySnapshot.forEach(async (doc) => {
+        const data = doc.data();
+        if (data.userID === userId) {
+            data.nombresAlumnos = data.nombresAlumnos.filter(nombre => nombre !== anteriorValor);
+            await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
+            console.log('Valor eliminado correctamente de la lista de alumnos.');
+            const grupo = data.grado + "" + data.grupo;
+            await eliminarValorEnMap(anteriorValor, grupo, db);
+        }
+    });
+}
+
+async function eliminarValorEnMap(anteriorValor, grupo, db) {
+    const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
+    const listaDoc = await getDoc(listaDocRef);
+    const data = listaDoc.data();
+
+    if (data) {
+        let encontrado = false;
+
+        Object.keys(data).forEach(key => {
+            // Verifica si el valor en este nivel es un objeto
+            if (typeof data[key] === 'object' && data[key] !== null) {
+                // Itera sobre las propiedades del objeto
+                Object.keys(data[key]).forEach(subKey => {
+                    if (subKey === anteriorValor) {
+                        encontrado = true;
+                        delete data[key][subKey]; // Elimina la clave antigua
+                    }
+                });
+            }
+        });
+
+        if (encontrado) {
+            // Guarda los cambios en la base de datos
+            await setDoc(listaDocRef, data);
+            console.log('Valor eliminado correctamente del mapa.');
+        } else {
+            console.log('El valor especificado no fue encontrado en el mapa.');
         }
     } else {
         console.log('No hay datos disponibles en el nivel especificado.');
