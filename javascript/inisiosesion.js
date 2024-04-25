@@ -1,9 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
-
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBYaOFfj9umpzsfWWTtYD7KhOak2gUMwtM",
@@ -16,15 +14,20 @@ const firebaseConfig = {
 
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-// Esta función se llamará cada vez que cambie el estado de autenticación del usuario
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if (user) {
-        // El usuario está autenticado, redirige a la página de inicio
-        window.location.href = "mitablero";
-    } else {
-        // El usuario no está autenticado, permanece en la página actual
+        const userData = await obtenerDatosUsuario(user.uid);
+        if (userData) {
+            const claveAdmin = await obtenerClaveAdmin();
+            if (userData.claveMaestro === claveAdmin) {
+                window.location.href = "Tablero";
+            } else {
+                window.location.href = "mitablero";
+            }
+        }
     }
 });
 
@@ -40,10 +43,6 @@ window.addEventListener("DOMContentLoaded", function() {
         const emailElement = document.getElementById("email");
         const passwordElement = document.getElementById("password");
 
-        // Imprimir los elementos de email y password en la consola
-        console.log("Elemento de email:", emailElement);
-        console.log("Elemento de password:", passwordElement);
-
         // Verificar si los elementos existen y tienen un valor
         if (emailElement && passwordElement && emailElement.value && passwordElement.value) {
             const email = emailElement.value;
@@ -52,9 +51,8 @@ window.addEventListener("DOMContentLoaded", function() {
             // Iniciar sesión con Firebase Authentication
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
-                    // Inicio de sesión exitoso, redirigir a "mitablero.html"
-                    console.log("Inicio de sesión exitoso. Redireccionando a mitablero.html.");
-                    window.location.href = "mitablero";
+                    // Inicio de sesión exitoso, redirigir según el tipo de usuario
+                    console.log("Inicio de sesión exitoso.");
                 })
                 .catch((error) => {
                     // Si hay un error durante el inicio de sesión, mostrar el mensaje de error
@@ -65,3 +63,27 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
+const obtenerDatosUsuario = async (userId) => {
+    try {
+        const userDoc = await getDoc(doc(db, 'users', userId));
+        if (userDoc.exists()) {
+            return userDoc.data();
+        } else {
+            return null;
+        }
+    } catch (error) {
+        console.error("Error al obtener los datos del usuario:", error);
+        return null;
+    }
+};
+
+const obtenerClaveAdmin = async () => {
+    try {
+        const claveAdminDoc = await getDoc(doc(db, 'claveMaestro', 'generarClaves'));
+        return claveAdminDoc.data().claveAdmin;
+    } catch (error) {
+        console.error("Error al obtener la clave de administrador:", error);
+        return null;
+    }
+};

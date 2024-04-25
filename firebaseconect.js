@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { createUserWithEmailAndPassword, getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, doc, setDoc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBYaOFfj9umpzsfWWTtYD7KhOak2gUMwtM",
@@ -11,29 +11,28 @@ const firebaseConfig = {
     messagingSenderId: "1080021803308",
     appId: "1:1080021803308:web:57a41937424d7b81decc89"
 };
-
-// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-const db = getFirestore(app); // Inicializa Firestore
+const db = getFirestore(app);
 
-// Esta función se llamará cada vez que cambie el estado de autenticación del usuario
 onAuthStateChanged(auth, async (user) => {
     if (user) {
-        // El usuario está autenticado, verifica si ya tiene datos en Firestore
         const userData = await obtenerDatosUsuario(user.uid);
         if (userData) {
-            // Si ya tiene datos en Firestore, redirige a la página de inicio
-            window.location.href = "mitablero";
+            const claveAdmin = await obtenerClaveAdmin();
+            if (userData.claveMaestro === claveAdmin) {
+                window.location.href = "Tablero";
+            } else {
+                window.location.href = "mitablero";
+            }
         }
     }
 });
 
-// Agregar el evento submit al formulario de registro
 const registro_Form = document.getElementById('registroForm');
-registro_Form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevenir el envío del formulario
 
+registro_Form.addEventListener('submit', async (e) => {
+    e.preventDefault();
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
@@ -41,29 +40,31 @@ registro_Form.addEventListener('submit', async (e) => {
     const apellidos = document.getElementById("apellidos").value;
     const claveMaestro = document.getElementById("claveMaestro").value;
 
-    // Verificar si las contraseñas coinciden
-    if (password !== confirmPassword) {
-        alert("Las contraseñas no coinciden");
-        return;
-    }
-
     try {
-        // Registrar al usuario con Firebase Authentication
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const claveAdmin = await obtenerClaveAdmin();
+        const claveMaestroDoc = await getDoc(doc(db, 'claveMaestro', 'generarClaves'));
+        const clavesMaestroArray = claveMaestroDoc.data().claveMaestro;
 
-        // Registro exitoso, obtener el ID del usuario
-        const userId = userCredential.user.uid;
-
-        // Guardar los datos del usuario en Firestore
-        await guardarDatosUsuario(userId, nombre, apellidos, claveMaestro);
-
-        // Guardar estado de autenticación en el almacenamiento local
-        localStorage.setItem('usuarioAutenticado', true);
-
-        // Redirigir a la página de inicio de sesión
-        window.location.href = "mitablero";
+        if (claveMaestro === claveAdmin) {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const userId = userCredential.user.uid;
+            await guardarDatosUsuario(userId, nombre, apellidos, claveMaestro);
+            localStorage.setItem('usuarioAutenticado', true);
+            window.location.href = "Tablero";
+        } else if (clavesMaestroArray.includes(claveMaestro)) {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const userId = userCredential.user.uid;
+            await guardarDatosUsuario(userId, nombre, apellidos, claveMaestro);
+            const newClavesMaestro = clavesMaestroArray.filter(clave => clave !== claveMaestro);
+            await updateDoc(doc(db, 'claveMaestro', 'generarClaves'), {
+                claveMaestro: newClavesMaestro
+            });
+            localStorage.setItem('usuarioAutenticado', true);
+            window.location.href = "mitablero";
+        } else {
+            alert("La clave maestra no es válida.");
+        }
     } catch (error) {
-        // Si hay un error durante el registro, mostrar el mensaje de error
         alert("Error al registrar: " + error.message);
     }
 });
@@ -91,7 +92,18 @@ const obtenerDatosUsuario = async (userId) => {
     }
 };
 
-// Verificar el estado de autenticación al cargar la página
+const obtenerClaveAdmin = async () => {
+    try {
+        console.log("Intentando obtener la clave de administrador...");
+        const claveAdminDoc = await getDoc(doc(db, 'claveMaestro', 'generarClaves'));
+        console.log("Clave de administrador obtenida:", claveAdminDoc.data().claveAdmin);
+        return claveAdminDoc.data().claveAdmin;
+    } catch (error) {
+        console.error("Error al obtener la clave de administrador:", error);
+        return null;
+    }
+};
+
 window.onload = () => {
     const usuarioAutenticado = localStorage.getItem('usuarioAutenticado');
     if (usuarioAutenticado) {

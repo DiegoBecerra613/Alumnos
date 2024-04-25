@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="icons/fabicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Ver Estadisticas</title>
+    <link rel="stylesheet" href="./css/verEstadisticas.css"/>
+</head>
+<body>
+<div class="ver-estadisticas">
+    <iframe src="menu.html" frameborder="0" scrolling="no"  height="1000"></iframe>
+    <div class="div-tomar-lista">
+        <div class="div-tomar-asistenicas">
+            <p class="txt_ver-estadisticas">Ver Estadisticas</p>
+            <div class="div-datos-grupo">
+                <div class="div2-datos-grupo">
+                    <p class="text-datos-grupo">Selecciona un Grupo</p>
+
+                    <div class="div-grado">
+                        <label for="gradoSelected" class="text-grado">Grado y Grupo</label>
+                        <select id="gradoSelected" class="CB-grado">
+                        </select>
+                    </div>
+                </div>
+                <button class="btnAceptar">Ver Estadisticas</button>
+            </div>
+            <div class="div-nombretablas">
+                <p class="text-lista-alumnos">Lista de Alumnos</p>
+                <p class="text-asistencias-ciclo-escolar">Asistencias por Ciclo Escolar</p>
+                <button class="btn-anterior-mes">
+                    <img class="btn-anterior" src="./assets/chevron-left%201.svg">
+                </button>
+                <p class="text-asistencias-por-mes">Asistencias por mes<br>
+                FEBRERO</p>
+                <button class="btn-siguiente-mes">
+                    <img class="btn-siguiente" src="./assets/chevron-right%201.svg">
+                </button>
+            </div>
+
+            <div class="div-contenedor-tabla">
+                <div class="tabla-wrapper">
+                    <table class="tabla-alumnos">
+                        <thead>
+                        <tr>
+                            <th>No.Lista</th>
+                            <th>Alumno</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Las filas se agregarán dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tabla-wrapper">
+                    <table class="tabla-asistencias-ciclo-escolar">
+                        <thead>
+                        <tr>
+                            <th>Total de dias<br>de Asistencias</th>
+                            <th>Putaje de<br>Asistencias</th>
+                            <th>Porcentaje de<br>Asistencias</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Las filas se generarán dinámicamente en JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tabla-wrapper">
+                    <table class="tabla-asistencias-por-mes">
+                        <thead>
+                        <tr>
+                            <th>Total de dias<br>de Asistencias</th>
+                            <th>Putaje de<br>Asistencias</th>
+                            <th>Porcentaje de<br>Asistencias</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <!-- Las filas se generarán dinámicamente en JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-wrapper">
+                    <p>Porcentaje del grupo por ciclo escolar</p>
+                    <div class="progress-bar">
+                        <span class="progress-segment" style="width: 33%; background-color: #05FF00;"></span>
+                        <span class="progress-segment" style="width: 34%; background-color: #FF0000;"></span>
+                        <span class="progress-segment" style="width: 33%; background-color: #FFFF00;"></span>
+                    </div>
+                </div>
+                <div class="progress-bar-wrapper">
+                    <p>Porcentaje del grupo por mes</p>
+                    <div class="barra-progreso-mes">
+                        <span class="progress-segment" style="width: 33%; background-color: #05FF00;"></span>
+                        <span class="progress-segment" style="width: 34%; background-color: #FF0000;"></span>
+                        <span class="progress-segment" style="width: 33%; background-color: #FFFF00;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module" src="./javascript/verEstadisticas.js"></script>
+</body>
+</html>

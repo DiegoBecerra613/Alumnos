@@ -1,0 +1,385 @@
+@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+html {
+    font-size:62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+input {
+    border: none;
+}
+body {
+}.ver-estadisticas {
+     width: 100%;
+     overflow: hidden;
+     position: relative;
+     display: flex;
+     align-items: center;
+     background-color: #f6f6f6;
+ }
+
+.ver-estadisticas .div-tomar-lista {
+    box-sizing: border-box;
+    padding: 3.3rem 2.4rem 1.5rem 0.1rem;
+    height: 102.4rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.ver-estadisticas .div-tomar-lista .div-tomar-asistenicas {
+    margin-right: 2.1rem;
+    width: 200rem;
+    height: 100%;
+    flex-shrink: 0;
+}
+.ver-estadisticas .div-tomar-lista .div-tomar-asistenicas .txt_ver-estadisticas {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+}
+
+.ver-estadisticas .div-tomar-lista .div-tomar-asistenicas .div-nombretablas .text-lista-alumnos {
+    margin-left: 16rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+}
+.ver-estadisticas .div-tomar-lista .div-tomar-asistenicas .div-nombretablas .text-asistencias-ciclo-escolar {
+    margin-left: 23rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+}
+.ver-estadisticas .div-tomar-lista .div-tomar-asistenicas .div-nombretablas .text-asistencias-por-mes {
+    margin-left: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+}
+.div-nombretablas {
+    display: flex; /* Utiliza Flexbox para alinear los elementos */
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+}
+
+.text-lista-alumnos,
+.text-asistencias-ciclo-escolar,
+.text-asistencias-por-mes {
+    margin: 0; /* Elimina los márgenes para alinear correctamente */
+    /* Asegúrate de que no haya otros estilos que afecten la alineación vertical */
+}
+
+.ver-estadisticas .div-tomar-lista .div-tomar-asistenicas .div-nombretablas .btn-anterior-mes {
+    margin-left: 18rem;
+    background: none;
+    border: none;
+    color: #000000;
+    white-space: nowrap;
+}
+.ver-estadisticas .div-tomar-lista .div-tomar-asistenicas .div-nombretablas .btn-siguiente-mes {
+    background: none;
+    margin-left: 1rem;
+    border: none;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.ver-estadisticas .div-tomar-lista .div-datos-grupo {
+    margin: 3rem 6rem 1.7rem 3.4rem;
+    box-sizing: border-box;
+    padding: 0.7rem 22.8rem 0.7rem 1rem;
+    height: 8rem;
+    width: 80rem;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.ver-estadisticas .div-tomar-lista .div-datos-grupo .div2-datos-grupo {
+    margin: 0rem 3.3rem 2.7rem 0rem;
+    width: 11.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.ver-estadisticas .div-tomar-lista .div-datos-grupo .div2-datos-grupo .text-datos-grupo {
+    margin: 0rem 0rem 0.9rem 0.3rem;
+    width: 10rem;
+    position: absolute;
+    top: 11.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: "Montserrat SemiBold";
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.ver-estadisticas .div-tomar-lista .div-datos-grupo .div2-datos-grupo .div-grado {
+    box-sizing: border-box;
+    padding: 1.6rem 20rem 1.7rem 2.185rem;
+    margin-left:60rem ;
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #eaf0f7;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.ver-estadisticas .div-tomar-lista .div-datos-grupo .div2-datos-grupo .div-grado .text-grado {
+    margin-right: 0.4rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4f555a;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.ver-estadisticas .div-tomar-lista .div-datos-grupo .div2-datos-grupo .div-grado .CB-grado {
+    border: none;
+    font-family: Montserrat, 'Source Sans Pro';
+    font-size: 1.6rem;
+    background-color: transparent;
+}
+
+
+.ver-estadisticas .div-tomar-lista .div-datos-grupo .btnAceptar {
+    margin: 2.7rem 0rem 3rem 0rem;
+    width: 24.3rem;
+    margin-left: 35rem;
+    border: none;
+    height: 5.3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #ffffff;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4461f2;
+    border-radius: 1rem;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+}
+.tabla-wrapper {
+    overflow-x: auto; /* Permitir el desplazamiento horizontal si la tabla es más ancha que el contenedor */
+}
+.div-contenedor-tabla {
+    display: grid;
+    grid-template-columns: repeat(3, 0.25fr); /* Divide el contenedor en tres columnas */
+    grid-gap: 10px;
+    max-height: 60%;
+    overflow-y: auto;
+}
+
+.tabla-alumnos {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px; /* Esquinas redondeadas para la tabla completa */
+    overflow: hidden; /* Asegura que el contenido no desborde los bordes redondeados */
+    table-layout: fixed; /* Fijar el ancho de la tabla */
+}
+
+
+.tabla-alumnos th{
+    padding: 17px;
+    border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    color: #FFFFFF;
+    text-align: center; /* Alinea el texto en el centro */
+    width: 25%; /* Ancho fijo para cada columna */
+    white-space: nowrap; /* Evitar el desbordamiento de texto */
+    overflow: hidden; /* Ocultar el texto que desborda */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+.tabla-alumnos td {
+    padding: 12px;
+    border-radius: 0; /* Elimina el border-radius de las celdas individuales */
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    color: #000000;
+    height: 2.9rem;
+    text-align: center; /* Alinea el texto en el centro */
+    width: 25%; /* Ancho fijo para cada columna */
+    white-space: nowrap; /* Evitar el desbordamiento de texto */
+    overflow: hidden; /* Ocultar el texto que desborda */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos para el texto que desborda */
+}
+
+.tabla-alumnos th {
+    background-color: #4461F2;
+
+}
+
+.tabla-alumnos tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.tabla-alumnos th:first-child,
+.tabla-alumnos td:first-child {
+    width: 11%; /* Ancho para la columna de número de lista */
+}
+
+.tabla-alumnos th:last-child,
+.tabla-alumnos td:last-child {
+    width: 57%; /* Ancho para la columna de alumnos */
+}
+
+.tabla-asistencias-ciclo-escolar {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tabla-asistencias-ciclo-escolar th,
+.tabla-asistencias-ciclo-escolar td {
+    padding: 12px;
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tabla-asistencias-ciclo-escolar th {
+    background-color: #4461F2;
+    color: #FFFFFF;
+}
+
+.tabla-asistencias-ciclo-escolar tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.tabla-asistencias-ciclo-escolar th,
+.tabla-asistencias-ciclo-escolar td {
+    padding: 7px 8px; /* Ajusta el padding vertical y horizontal */
+}
+
+.tabla-asistencias-ciclo-escolar td {
+    height: 3.9rem; /* Ajusta la altura según tus necesidades */
+    color: #000000;
+}
+
+.tabla-asistencias-por-mes {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tabla-asistencias-por-mes th,
+.tabla-asistencias-por-mes td {
+    padding: 12px;
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tabla-asistencias-por-mes th {
+    background-color: #4461F2;
+    color: #ffffff;
+}
+
+.tabla-asistencias-por-mes tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.tabla-asistencias-por-mes th,
+.tabla-asistencias-por-mes td {
+    padding: 7px 8px; /* Ajusta el padding vertical y horizontal */
+}
+
+.tabla-asistencias-por-mes td {
+    height: 3.9rem; /* Ajusta la altura según tus necesidades */
+    color: #000000;
+}
+.progress-bar-container {
+    position: absolute;
+    border-radius: 1rem;
+    background: #FFFFFF;
+    width: 50%;
+    height: 10%;
+    bottom: 10%;
+    left:25%;
+    right: 0;
+    display: flex;
+    flex-direction: row; /* Modificado de column a row */
+    align-items: center;
+    justify-content: space-between; /* Añadido para separar las barras de progreso */
+}
+
+.progress-bar-wrapper {
+    width: 40%; /* Modificado de 80% a 40% para que ambas barras de progreso quepan en la misma línea */
+    display: flex;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-family: "Montserrat SemiBold";
+    font-size: 1.7rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barra-progreso-mes,
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin-top: 10px;
+    background-color: #f2f2f2;
+    border-radius: 10px; /* Añadido para hacer las esquinas redondeadas */
+    overflow: hidden; /* Añadido para ocultar el contenido que se sale de la caja */
+}
+
+.progress-segment {
+    height: 100%;
+}
+
+.progress-label {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
