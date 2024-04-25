@@ -233,6 +233,7 @@ async function eliminarValor(fila, userId, db) {
             console.log('Valor eliminado correctamente de la lista de alumnos.');
             const grupo = data.grado + "" + data.grupo;
             await eliminarValorEnMap(anteriorValor, grupo, db);
+            location.reload();
         }
     });
 }
