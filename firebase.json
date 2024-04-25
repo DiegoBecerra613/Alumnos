@@ -22,6 +22,10 @@
         "destination": "/tomar-asistencias.html"
       },
       {
+        "source": "/EditarLista",
+        "destination": "/editar-lista.html"
+      },
+      {
         "source": "**",
         "destination": "/404.html"
       }
