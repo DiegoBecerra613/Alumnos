@@ -2063,7 +2063,7 @@ body {
 .btnEditar,
 .btnEliminar {
   padding: 8px 20px;
-  margin-right: 15px; /* Agrega espacio entre los botones */
+  margin-right: 5px; /* Agrega espacio entre los botones */
   font-family: "Montserrat SemiBold";
   color: white;
   border-radius: 5px;
