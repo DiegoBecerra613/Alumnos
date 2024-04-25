@@ -107,7 +107,7 @@ function llenarTabla(datos, userId, db) {
         tbody.appendChild(row);
 
         btnEditar.addEventListener('click', () => editarFila(row, userId, db));
-        btnEliminar.addEventListener('click', () => eliminarValor(userId, db));
+        btnEliminar.addEventListener('click', () => eliminarValor(row,userId, db));
     });
 }
 
@@ -220,7 +220,7 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
     }
 }
 
-async function eliminarValor(userId, db) {
+async function eliminarValor(fila, userId, db) {
     const celdaApellidos = fila.querySelector('td:nth-child(2)');
     const celdaNombre = fila.querySelector('td:nth-child(3)');
     const anteriorValor = celdaApellidos.textContent + " " + celdaNombre.textContent;
