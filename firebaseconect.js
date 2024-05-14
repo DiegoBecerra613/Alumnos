@@ -11,7 +11,7 @@ const firebaseConfig = {
     messagingSenderId: "290788592374",
     appId: "1:290788592374:web:85967780d4373795ea3ad7",
     measurementId: "G-89RQQTTHMK"
-};
+  };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
@@ -42,16 +42,29 @@ registro_Form.addEventListener('submit', async (e) => {
     const claveMaestro = document.getElementById("claveMaestro").value;
 
     try {
-        //const claveAdmin = await obtenerClaveAdmin();
-        //const claveMaestroDoc = await getDoc(doc(db, 'claveMaestro', 'generarClaves'));
-        //const clavesMaestroArray = claveMaestroDoc.data().claveMaestro;
+        const claveAdmin = await obtenerClaveAdmin();
+        const claveMaestroDoc = await getDoc(doc(db, 'claveMaestro', 'generarClaves'));
+        const clavesMaestroArray = claveMaestroDoc.data().claveMaestro;
 
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const userId = userCredential.user.uid;
-        await guardarDatosUsuario(userId, nombre, apellidos, claveMaestro);
-        localStorage.setItem('usuarioAutenticado', true);
-        window.location.href = "Tablero";
-
+        if (claveMaestro === claveAdmin) {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const userId = userCredential.user.uid;
+            await guardarDatosUsuario(userId, nombre, apellidos, claveMaestro);
+            localStorage.setItem('usuarioAutenticado', true);
+            window.location.href = "Tablero";
+        } else if (clavesMaestroArray.includes(claveMaestro)) {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const userId = userCredential.user.uid;
+            await guardarDatosUsuario(userId, nombre, apellidos, claveMaestro);
+            const newClavesMaestro = clavesMaestroArray.filter(clave => clave !== claveMaestro);
+            await updateDoc(doc(db, 'claveMaestro', 'generarClaves'), {
+                claveMaestro: newClavesMaestro
+            });
+            localStorage.setItem('usuarioAutenticado', true);
+            window.location.href = "mitablero";
+        } else {
+            alert("La clave maestra no es válida.");
+        }
     } catch (error) {
         alert("Error al registrar: " + error.message);
     }
