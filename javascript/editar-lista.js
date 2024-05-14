@@ -5,13 +5,14 @@ import { getFirestore, collection, doc, setDoc, getDocs, getDoc, where, query, o
 document.addEventListener("DOMContentLoaded", async function () {
     // Tu configuración de Firebase y código de inicialización aquí...
     const firebaseConfig = {
-        apiKey: "AIzaSyBYaOFfj9umpzsfWWTtYD7KhOak2gUMwtM",
-        authDomain: "alumassist.firebaseapp.com",
-        projectId: "alumassist",
-        storageBucket: "alumassist.appspot.com",
-        messagingSenderId: "1080021803308",
-        appId: "1:1080021803308:web:57a41937424d7b81decc89"
-    };
+        apiKey: "AIzaSyApGQm8o2efr0t8MBKczFF7yi7-lexS-xY",
+        authDomain: "alumassistprueba.firebaseapp.com",
+        projectId: "alumassistprueba",
+        storageBucket: "alumassistprueba.appspot.com",
+        messagingSenderId: "290788592374",
+        appId: "1:290788592374:web:85967780d4373795ea3ad7",
+        measurementId: "G-89RQQTTHMK"
+      };
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const auth = getAuth(); // Obtener la instancia de autenticación
