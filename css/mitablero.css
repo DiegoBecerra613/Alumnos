@@ -12,7 +12,7 @@
     font-weight: normal;
 }
 html {
-    font-size:62.5%;
+    font-size: 62.5%;
 }
 * {
     margin: 0;
@@ -25,20 +25,25 @@ input {
     border: none;
 }
 body {
-    width: 191.9rem;
-}.tablero {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.tablero {
     display: none;
-     width: 100%;
-     height: 94.5rem;
-     position: relative;
-     overflow: hidden;
-     background-color: #f6f6f6;
- }
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #f6f6f6;
+}
 .tablero .menu {
     box-sizing: border-box;
     padding: 4.6rem 1.2rem 4.4rem 5.6rem;
-    width: 25.3rem;
-    height: 94.5rem;
+    width: 100%;
+    max-width: 25.3rem;
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -224,15 +229,16 @@ body {
     vertical-align: top;
 }
 .tablero .tablero_opciones {
-    width: 185rem;
-    height: 102.4rem;
+    width: 100%;
+    height: auto;
     position: absolute;
     left: 6.4rem;
     top: 0;
 }
 .tablero .tablero_opciones .auto-group-2f1m-dvj {
-    width: 26.3rem;
-    height: 68.4rem;
+    width: 100%;
+    max-width: 26.3rem;
+    height: auto;
     position: absolute;
     left: 19.9rem;
     top: 3.3rem;
@@ -338,7 +344,7 @@ body {
     border: none;
     margin-bottom: 6.9rem;
     width: 100%;
-    height: 15.6rem;
+    height: auto;
     cursor: pointer;
     position: relative;
     box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
@@ -449,8 +455,9 @@ body {
     flex-shrink: 0;
 }
 .tablero .tablero_opciones .mi_tablero2 {
-    width: 26.3rem;
-    height: 38.1rem;
+    width: 100%;
+    max-width: 26.3rem;
+    height: auto;
     position: absolute;
     left: 51.1rem;
     top: 11.1rem;
@@ -574,8 +581,9 @@ body {
 .tablero .tablero_opciones .mi_tablero3 {
     box-sizing: border-box;
     padding-bottom: 53.2rem;
-    width: 69.6rem;
-    height: 101.1rem;
+    width: 100%;
+    max-width: 69.6rem;
+    height: auto;
     position: absolute;
     left: 82.3rem;
     top: 1.3rem;
@@ -624,7 +632,8 @@ body {
     margin-bottom: 6.9rem;
     box-sizing: border-box;
     padding: 1.8rem 0.2rem 1.9rem 0.2rem;
-    width: 26.3rem;
+    width: 100%;
+    max-width: 26.3rem;
     cursor: pointer;
     align-items: center;
     display: flex;
@@ -680,7 +689,8 @@ body {
     border: none;
     box-sizing: border-box;
     padding: 1.8rem 0.2rem 1.9rem 0.2rem;
-    width: 26.3rem;
+    width: 100%;
+    max-width: 26.3rem;
     cursor: pointer;
     align-items: center;
     display: flex;
@@ -735,15 +745,101 @@ body {
 .tablero .tablero_opciones .img_rocket {
     box-sizing: border-box;
     padding: 11.8rem 0rem 0rem 1.6rem;
-    width: 50rem;
-    height: 50rem;
+    width: 100%;
+    max-width: 50rem;
+    height: auto;
     position: absolute;
     left: 120rem;
     top: 20rem;
 }
 .tablero .tablero_opciones .img_rocket .img_tablero {
-    width: 50rem;
-    height: 50rem;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     vertical-align: top;
+}
+
+/* Consultas de Medios */
+@media (max-width: 1024px) {
+    .tablero .menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .tablero .menu .m_baraa,
+    .tablero .menu .m_miperfil,
+    .tablero .menu .m_descargarlista,
+    .tablero .menu .m_btncerrarsesion {
+        margin: 1rem;
+    }
+    .tablero .tablero_opciones {
+        left: 0;
+    }
+    .tablero .tablero_opciones .auto-group-2f1m-dvj,
+    .tablero .tablero_opciones .mi_tablero2,
+    .tablero .tablero_opciones .mi_tablero3 {
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+    }
+    .tablero .tablero_opciones .img_rocket {
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .tablero .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tablero .menu .m_baraa,
+    .tablero .menu .m_miperfil,
+    .tablero .menu .m_descargarlista,
+    .tablero .menu .m_btncerrarsesion {
+        width: 100%;
+        margin: 0.5rem;
+        justify-content: center;
+    }
+    .tablero .tablero_opciones {
+        padding: 0.5rem;
+    }
+    .tablero .tablero_opciones .auto-group-2f1m-dvj,
+    .tablero .tablero_opciones .mi_tablero2,
+    .tablero .tablero_opciones .mi_tablero3 {
+        padding: 0.5rem;
+    }
+    .tablero .tablero_opciones .img_rocket {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .tablero .menu {
+        padding: 2rem 1rem;
+    }
+    .tablero .menu .m_baraa,
+    .tablero .menu .m_miperfil,
+    .tablero .menu .m_descargarlista,
+    .tablero .menu .m_btncerrarsesion {
+        font-size: 1.2rem;
+    }
+    .tablero .tablero_opciones .auto-group-2f1m-dvj .txt_mitablero .txt_bienvenida .mi-tablero-1RV,
+    .tablero .tablero_opciones .auto-group-2f1m-dvj .txt_mitablero .txt_bienvenida .text_holadenuevo {
+        font-size: 1.2rem;
+    }
+    .tablero .tablero_opciones .auto-group-2f1m-dvj .btn_crear_grupo .text_creargrupo .txt_crear_grupo,
+    .tablero .tablero_opciones .auto-group-2f1m-dvj .btn_despedir_grupo .linea_despedir_grupo .txt_despedir_grupo {
+        font-size: 1rem;
+    }
+    .tablero .tablero_opciones .auto-group-2f1m-dvj .btn_aceptar_grupo .div_aceptar_grupo .text_aceptar_grupo {
+        font-size: 1rem;
+    }
 }
