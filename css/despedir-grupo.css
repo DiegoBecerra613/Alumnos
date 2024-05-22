@@ -1,4 +1,20 @@
-
+@font-face {
+  font-family: 'TerminaTest-Regular';
+  src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+  font-family: 'TerminaTest-SemiBold';
+  src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+  font-family: 'Arial Rounded MT Bold';
+  src: local("Arial Rounded MT Bold");
+  font-weight: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
 .despedir-grupo .texto-despedir-grupo {
   margin: 0 0.5rem 5.6rem 0.5rem;
   display: inline-block;
@@ -39,6 +55,7 @@
   color: #FFFFFF;
 }
 .despedir-grupo .btn-eliminar {
+  cursor: pointer;
   border-radius: 0.6rem;
   border: none;
   background: #FA5252;
@@ -49,6 +66,11 @@
   justify-content: center;
   padding: 0.4rem 0.5rem 0.5rem 0.4rem;
   box-sizing: border-box;
+  transition: background 0.3s ease; /* Agrega transición suave al cambiar el color de fondo */
+}
+/* Agrega el efecto hover */
+.despedir-grupo .btn-eliminar:hover {
+  background: #D12F2F; /* Un tono más oscuro de rojo */
 }
 .despedir-grupo .rectangulo {
   box-shadow: 0rem 0.3rem 0.3rem 0rem rgba(0, 0, 0, 0.25);
@@ -74,7 +96,7 @@
   height: 31.3rem;
 }
 .despedir-grupo .saly-41 {
-  margin-top: 33.9rem;
+  margin-top: 27rem;
   display: flex;
   flex-direction: row;
   justify-content: center;

@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'TerminaTest-Regular';
+  src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+  font-family: 'TerminaTest-SemiBold';
+  src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+  font-family: 'Arial Rounded MT Bold';
+  src: local("Arial Rounded MT Bold");
+  font-weight: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.nuevo-maestro .contenedor-nuevo-maestro {
+  margin: 2.1rem 0 45.3rem 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.nuevo-maestro .text-nuevo-maestro {
+  margin: 0 0.5rem 5.6rem 0.5rem;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Termina Test', 'Roboto Condensed';
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000000;
+}
+.nuevo-maestro .text-clave-maestro {
+  margin: 0.6rem 0.8rem 0.4rem 0;
+  display: inline-block;
+  width: 15.3rem;
+  overflow-wrap: break-word;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000000;
+}
+.nuevo-maestro .text-digito-6 {
+  border: none;
+  border-radius: 0.6rem;
+  background: #D9D9D9;
+  margin-right: 0.5rem;
+  width: 1.9rem;
+  height: 2.5rem;
+}
+.nuevo-maestro .text-digito-5 {
+  border: none;
+  border-radius: 0.6rem;
+  background: #D9D9D9;
+  margin-right: 0.5rem;
+  width: 1.9rem;
+  height: 2.5rem;
+}
+.nuevo-maestro .text-digito-4 {
+  border: none;
+  border-radius: 0.6rem;
+  background: #D9D9D9;
+  margin-right: 0.5rem;
+  width: 1.9rem;
+  height: 2.5rem;
+}
+.nuevo-maestro .text-digito-3 {
+  border: none;
+  border-radius: 0.6rem;
+  background: #D9D9D9;
+  margin-right: 0.5rem;
+  width: 1.9rem;
+  height: 2.5rem;
+}
+.nuevo-maestro .text-digito-2 {
+  border: none;
+  border-radius: 0.6rem;
+  background: #D9D9D9;
+  margin-right: 0.5rem;
+  width: 1.9rem;
+  height: 2.5rem;
+}
+.nuevo-maestro .text-digito-1 {
+  border: none;
+  border-radius: 0.6rem;
+  background: #D9D9D9;
+  width: 1.9rem;
+  height: 2.5rem;
+}
+.nuevo-maestro .codigo {
+  border-radius: 0.6rem;
+  margin-right: 2.3rem;
+  display: flex;
+  flex-direction: row;
+  width: 13.8rem;
+  box-sizing: border-box;
+}
+.nuevo-maestro .generar-clave {
+  overflow-wrap: break-word;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 1rem;
+  color: #FFFFFF;
+}
+.nuevo-maestro .btn-generar-clave {
+  border: none;
+  border-radius: 0.6rem;
+  background: #4CAF50;
+  position: relative;
+  margin: 0.2rem 0 0.1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.4rem 0.1rem 0.5rem 0;
+  width: 12rem;
+  height: fit-content;
+  box-sizing: border-box;
+  cursor:pointer;
+  transition: background-color 0.3s; /* Agrega transición suave al cambiar el color de fondo */
+}
+.nuevo-maestro .btn-generar-clave:hover {
+  background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
+.nuevo-maestro .contenedor-codigo-boton {
+  display: flex;
+  flex-direction: row;
+  width: 28rem;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.nuevo-maestro .recycle-view-clave-maestro {
+  box-shadow: 0rem 0.3rem 0.3rem 0rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.6rem;
+  background: #FFFFFF;
+  position: relative;
+  margin-bottom: 1.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.6rem 3.9rem 0.8rem 1.3rem;
+  width: 49.3rem;
+  box-sizing: border-box;
+}
+
+.nuevo-maestro {
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+}

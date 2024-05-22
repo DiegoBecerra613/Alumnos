@@ -6,6 +6,8 @@ import { getStorage, ref, uploadBytes, listAll } from "https://www.gstatic.com/f
 
 let userId; // Declarar userId en el ámbito global
 document.addEventListener('DOMContentLoaded', function() {
+    // Mostrar el loader al principio de la página
+    document.querySelector('.loader-background').classList.add('visible');
     const btnRegistrar = document.querySelector('.btnRegistrar');
     const tablaAlumnos = document.querySelector('.tabla-alumnos tbody');
     const btnAceptar = document.querySelector('.btnAceptar');
@@ -318,6 +320,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Si el usuario no está autenticado, redirigirlo a la página de inicio de sesión o al index.html
             window.location.replace("index");
         }
+        // Ocultar el loader una vez que los datos se hayan cargado
+        document.querySelector('.loader-background').classList.remove('visible');
     });
 // Evento click del botón 'btnAceptarGrupo'
     btnAceptarGrupo.addEventListener('click', async () => {
@@ -490,8 +494,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return numDiasPorMes;
     }
-
-
-
-
 });

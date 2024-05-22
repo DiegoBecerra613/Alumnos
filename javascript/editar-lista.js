@@ -3,6 +3,8 @@ import { onAuthStateChanged, getAuth } from "https://www.gstatic.com/firebasejs/
 import { getFirestore, collection, doc, setDoc, getDocs, getDoc, where, query, orderBy, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
+    // Mostrar el loader al principio
+    document.querySelector('.loader-background').classList.add('visible');
     // Tu configuración de Firebase y código de inicialización aquí...
     const firebaseConfig = {
         apiKey: "AIzaSyApGQm8o2efr0t8MBKczFF7yi7-lexS-xY",
@@ -34,7 +36,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         } else {
             console.log("Usuario no autenticado.");
         }
-
+// Ocultar el loader una vez que los datos se hayan cargado
+        document.querySelector('.loader-background').classList.remove('visible');
     });
 });
 
@@ -47,12 +50,12 @@ async function registrar(userId, db) {
     var nuevoNombre = apellidos + " " + nombre;
     var grupo = "";
     const querySnapshot = await getDocs(collection(db, 'grupos'));
-    querySnapshot.forEach(async (doc) => { // Se agrega async aquí para poder usar await dentro del forEach
+    querySnapshot.forEach(async (doc) => {
         const grupoData = doc.data();
         if (grupoData.userID === userId) {
             grupo = grupoData.grado + grupoData.grupo;
             grupoData.nombresAlumnos.push(nuevoNombre);
-            await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos }); // Se añade await aquí para asegurarse de que se espera la actualización antes de continuar
+            await updateDoc(doc.ref, { nombresAlumnos: grupoData.nombresAlumnos });
         }
     });
     const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
@@ -60,13 +63,12 @@ async function registrar(userId, db) {
     const data = listaDoc.data();
 
     if (data) {
-
         Object.keys(data).forEach(key => {
             console.log(`Valores en nivel ${key}:`);
             if (typeof data[key] === 'object' && data[key] !== null) {
                 Object.keys(data[key]).forEach(subKey => {
-                    data[key][nuevoNombre] = data[key][subKey];
-                    return;
+                    // Inicializa el nuevo array con ceros
+                    data[key][nuevoNombre] = Array(data[key][subKey].length).fill(0);
                 });
             } else {
                 console.log(`   ${data[key]}`);
@@ -84,17 +86,13 @@ function llenarTabla(datos, userId, db) {
     tbody.innerHTML = '';
     const nombresOrdenados = datos.sort();
     nombresOrdenados.forEach((nombre, index) => {
-        const [apellidos, ...nombres] = nombre.split(' ');
         const row = document.createElement('tr');
         const numeroRegistro = document.createElement('td');
         numeroRegistro.textContent = index + 1;
         row.appendChild(numeroRegistro);
-        const apellidosCell = document.createElement('td');
-        apellidosCell.textContent = apellidos;
-        row.appendChild(apellidosCell);
-        const nombresCell = document.createElement('td');
-        nombresCell.textContent = nombres.join(' '); // Unir los nombres separados por un espacio
-        row.appendChild(nombresCell);
+        const nombreCell = document.createElement('td');
+        nombreCell.textContent = nombre; // Unir los nombres separados por un espacio
+        row.appendChild(nombreCell);
         const opcionesCell = document.createElement('td');
         const btnEditar = document.createElement('button');
         btnEditar.textContent = 'Editar';
@@ -113,22 +111,15 @@ function llenarTabla(datos, userId, db) {
 }
 
 function editarFila(fila, userId, db) {
-    const celdaApellidos = fila.querySelector('td:nth-child(2)');
-    const celdaNombre = fila.querySelector('td:nth-child(3)');
-    const anteriorValor = celdaApellidos.textContent + " " + celdaNombre.textContent;
-
-    const inputApellidos = document.createElement('input');
-    inputApellidos.type = 'text';
-    inputApellidos.value = celdaApellidos.textContent;
+    const celdaNombre = fila.querySelector('td:nth-child(2)');
+    const anteriorValor = celdaNombre.textContent;
 
     const inputNombre = document.createElement('input');
     inputNombre.type = 'text';
     inputNombre.value = celdaNombre.textContent;
 
-    celdaApellidos.innerHTML = '';
     celdaNombre.innerHTML = '';
 
-    celdaApellidos.appendChild(inputApellidos);
     celdaNombre.appendChild(inputNombre);
 
     // Ocultar botones de editar y eliminar
@@ -144,13 +135,11 @@ function editarFila(fila, userId, db) {
 }
 
 function aceptarCambios(fila, userId, anteriorValor, db) {
-    const celdaApellidos = fila.querySelector('td:nth-child(2) input');
-    const celdaNombre = fila.querySelector('td:nth-child(3) input');
+    const celdaNombre = fila.querySelector('td:nth-child(2) input');
 
-    fila.querySelector('td:nth-child(2)').textContent = celdaApellidos.value;
-    fila.querySelector('td:nth-child(3)').textContent = celdaNombre.value;
+    fila.querySelector('td:nth-child(2)').textContent = celdaNombre.value;
 
-    const nuevoValor = celdaApellidos.value + " " + celdaNombre.value;
+    const nuevoValor = celdaNombre.value;
     // Mostrar botones de editar y eliminar
     fila.querySelector('.btnEditar').style.display = 'inline-block';
     fila.querySelector('.btnEliminar').style.display = 'inline-block';
@@ -173,12 +162,16 @@ async function editarValorEnTabla(db, userId, anteriorValor, nuevoValor) {
                     await updateDoc(doc.ref, { nombresAlumnos: data.nombresAlumnos });
                     console.log(data.grado + "" + data.grupo);
                     const grupo = data.grado + "" + data.grupo;
-                    editarValorEnMap(db, anteriorValor, nuevoValor, grupo);
+                    // Solo llama a editarValorEnMap si el valor ha cambiado
+                    if (anteriorValor !== nuevoValor) {
+                        editarValorEnMap(db, anteriorValor, nuevoValor, grupo);
+                    }
                 }
             });
         }
     });
 }
+
 
 async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
     const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
@@ -222,9 +215,8 @@ async function editarValorEnMap(db, anteriorValor, nuevoValor, grupo) {
 }
 
 async function eliminarValor(fila, userId, db) {
-    const celdaApellidos = fila.querySelector('td:nth-child(2)');
-    const celdaNombre = fila.querySelector('td:nth-child(3)');
-    const anteriorValor = celdaApellidos.textContent + " " + celdaNombre.textContent;
+    const celdaNombre = fila.querySelector('td:nth-child(2)');
+    const anteriorValor = celdaNombre.textContent;
     const querySnapshot = await getDocs(collection(db, 'grupos'));
     querySnapshot.forEach(async (doc) => {
         const data = doc.data();
@@ -241,7 +233,7 @@ async function eliminarValor(fila, userId, db) {
 
 async function eliminarValorEnMap(anteriorValor, grupo, db) {
     const listaDocRef = doc(db, 'grupos', grupo, 'lista', `lista${grupo}`);
-    const listaDoc = await getDoc(listaDocRef);
+    const listaDoc =     await getDoc(listaDocRef);
     const data = listaDoc.data();
 
     if (data) {

@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.eliminargrupo .text-eliminar-grupo {
+    margin-bottom: 3.6rem;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Termina Test', 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #000000;
+}
+
+.eliminargrupo .text-alumnos,
+.eliminargrupo .text-grado-grupo,
+.eliminargrupo .text-maestro{
+    margin: 0.4rem 1rem 0.6rem 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Termina Test', 'Roboto Condensed';
+    font-weight: 600;
+    font-size: 1rem;
+    color: #000000;
+}
+.eliminargrupo .text-nombre-maestro,
+.eliminargrupo .text-no-alumnos,
+.eliminargrupo .text-GB {
+    overflow-wrap: break-word;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.eliminargrupo .div-name-maestro,
+.eliminargrupo .div-alumnos,
+.eliminargrupo .div-GB{
+    border-radius: 0.6rem;
+    background: #EAF0F7;
+    position: relative;
+    margin: 0.3rem 0.4rem 0.4rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.2rem 1.2rem 0.1rem 1.1rem;
+    box-sizing: border-box;
+}
+
+.eliminargrupo .text-delete-group {
+    overflow-wrap: break-word;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+.eliminargrupo .btn-eliminar-grupo {
+    cursor: pointer;
+    border: none;
+    border-radius: 0.6rem;
+    background: #FA5252;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.6rem 0.5rem 0.4rem 0.5rem;
+    box-sizing: border-box;
+    transition: background 0.3s ease; /* Agrega transición suave al cambiar el color de fondo */
+}
+/* Agrega el efecto hover */
+.eliminargrupo .btn-eliminar-grupo:hover {
+    background: #D12F2F; /* Un tono más oscuro de rojo */
+}
+.eliminargrupo .recyle-view-eliminar-grupo {
+    box-shadow: 0rem 0.3rem 0.3rem 0rem rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+    border-radius: 0.6rem;
+    background: #FFFFFF;
+    position: relative;
+    margin-right: 4.4rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0.8rem 0.6rem 0.9rem 2rem;
+    width: fit-content;
+    box-sizing: border-box;
+}
+.eliminargrupo .contenedor-eliminar-grupo {
+    margin: 2.1rem 0 38.4rem 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.eliminargrupo {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+}

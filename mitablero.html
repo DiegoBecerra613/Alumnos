@@ -7,43 +7,21 @@
     <meta name="theme-color" content="#000000" />
     <title>Mi Tablero</title>
     <link rel="stylesheet" href="./css/mitablero.css"/>
+    <link rel="stylesheet" href="./css/loader.css"/>
 
 </head>
 <body>
+<div class="loader-background">
+    <div class="loader"></div>
+</div>
 <div class="tablero">
-    <div class="menu">
-        <div class="m_baraa">
-            <img class="m_logo" src="./assets/logo-UJf.png"/>
-            <img class="m_opciones" src="./assets/menu-4-1-yhd.png"/>
-        </div>
-        <div class="m_menu">
-            <img class="m_menu_logo" src="./assets/home-yVV.png"/>
-            <p class="m_btnmenu">Menu</p>
-        </div>
-        <div class="m_mitablero">
-            <img class="m_mitablero_logo" src="./assets/grid-sZm.png"/>
-            <p class="m_btnmitablero">Mi Tablero</p>
-        </div>
-        <div class="m_descargarlista">
-            <img class="m_descargarlista_icono" src="./assets/streamlinehq-interface-download-button-2-solid-48-icohglekaz4uefrwbo6-wP9.png"/>
-            <p class="m_btndescargarlista">Descargar Listas</p>
-        </div>
-        <div class="m_miperfil">
-            <img class="m_miperfil_logo" src="./assets/buyer-1-h4P.png"/>
-            <p class="m_btnmiperfil">Mi perfil</p>
-        </div>
-
-        <div class="m_cerrarsesion">
-            <img class="m_cerrarsesion_logo" src="./assets/signoutsqurefill-xu9.png"/>
-            <p class="m_btncerrarsesion">Cerrar Sesion</p>
-        </div>
-    </div>
+    <iframe src="menu.html" frameborder="0" scrolling="no"  height="1000"></iframe>
     <div class="tablero_opciones">
         <div class="auto-group-2f1m-dvj">
             <div class="txt_mitablero">
                 <div class="txt_bienvenida">
                     <p class="mi-tablero-1RV">Mi Tablero</p>
-                    <p class="text_holadenuevo">Hola de nuevo Fabian</p>
+                    <p class="text_holadenuevo"></p>
                 </div>
                 <img class="emoji_saludo" src="./assets/f44b-1-1vB.png"/>
             </div>
@@ -66,14 +44,7 @@
                 <img class="icon_despedir_grupo" src="./assets/brokenheartfill.png"/>
             </button>
 
-            <button class="btn_aceptar_grupo">
-                <div class="div_aceptar_grupo">
-                    <img class="img_aceptar_grupo" src="./assets/line-4-WaX.png"/>
-                    <p class="text_aceptar_grupo">Aceptar Grupo</p>
-                </div>
-                <img class="icon_aceptar_grupo" src="./assets/checkroundfill.png"/>
-                <p class="info_aceptar_grupo">Acepta Grupos Transferidos</p>
-            </button>
+
         </div>
 
         <div class="mi_tablero2">
@@ -86,22 +57,14 @@
                 <p class="info_tomar_asistencia">Pasa lista a tu grupo</p>
             </button>
 
-            <button class="btn_grupos_anteriores">
-                <div class="div_grupos_anteriores">
-                    <img class="linea_grupos_anteriores" src="./assets/line-4-1Nb.png"/>
-                    <p class="text_grupos_anteriores">Grupos Anteriores</p>
-                </div>
-                <img class="icon_grupos_anteriores" src="./assets/bookmarkfill-DP9.png"/>
-                <p class="info_grupos_anteriores">Consulta tus grupos anteriores</p>
-            </button>
 
         </div>
         <div class="mi_tablero3">
             <div class="info_perfil">
                 <img class="img_perfil" src="./assets/placeholder.png"/>
                 <div class="div_info">
-                    <p class="text_usuario">Fabian Rivera</p>
-                    <p class="email_usuario">fabianrivera@gmail.com</p>
+                    <p class="text_usuario"></p>
+                    <p class="email_usuario"></p>
                 </div>
             </div>
 
@@ -114,14 +77,6 @@
                 <p class="info_editar_lista">Realiza cambios a la lista</p>
             </button>
 
-            <button class="btn_transferir_grupo">
-                <div class="div_transferir_grupo">
-                    <img class="linea_transferir_grupo" src="./assets/line-4-aGs.png"/>
-                    <p class="text_transferir_grupo">Transferir Grupo</p>
-                </div>
-                <img class="icon_transferir_grupo" src="./assets/horizontaltopleftmain-Kf9.png"/>
-                <p class="info_transferir_grupo">Pasa tu grupo a otra maestra</p>
-            </button>
 
         </div>
         <div class="img_rocket">
@@ -131,3 +86,4 @@
 </div>
 <script type="module" src="./javascript/mitablero.js"></script>
 </body>
+</html>

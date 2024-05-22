@@ -1,0 +1,384 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+.mi-perfil {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+}
+
+.mi-perfil .div-mi-perfil {
+  width: 120.7rem;
+  height: 102.4rem;
+  position: relative;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil {
+  width: 79rem;
+  height: 58.4rem;
+  position: absolute;
+  left: 3.5rem;
+  top: 3.3rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil {
+  box-sizing: border-box;
+  padding-bottom: 0.2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .text-mi-perfil {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Termina Test, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .info-datos-personales {
+  margin-bottom: 4.8rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2175;
+  color: #000000;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .text-foto-perfil {
+  margin: 0rem 0rem 1rem 1.9rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Termina Test, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto {
+  margin: 0rem 48.8rem 2.2rem 2.6rem;
+  width: calc(100% - 51.4rem);
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto .div-foto {
+  margin-right: 4.2rem;
+  box-sizing: border-box;
+  padding: 0.517rem 0.517rem 0.517rem 9.5rem;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/placeholder-bg.png');
+  border-radius: 5rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto .div-foto .icon-edit {
+  margin-bottom: 8.9828rem;
+  width: 1.9828rem;
+  height: 1.9828rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto .contenedor-botones-foto {
+  margin: 1.5rem 0rem 2rem 0rem;
+  width: 11.4rem;
+  height: calc(100% - 3.5rem);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto .contenedor-botones-foto .btn-borrar-foto {
+  margin-bottom: 1.5rem;
+  border: none;
+  width: 100%;
+  height: 3.5rem;
+  cursor:pointer;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  transition: background-color 0.3s; /* Agrega transición suave al cambiar el color de fondo */
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f95252;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto .contenedor-botones-foto .btn-borrar-foto:hover{
+  background-color:#D84343; /* Rojo más oscuro al pasar el cursor */
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto .contenedor-botones-foto .btn-subir-foto {
+  width: 100%;
+  height: 3.5rem;
+  border: none;
+  transition: background-color 0.3s; /* Agrega transición suave al cambiar el color de fondo */
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  cursor:pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: #4CAF50;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .contenedor-foto .contenedor-botones-foto .btn-subir-foto:hover{
+  background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .div-nombre-apellidos {
+  margin: 0rem 30.2rem 0rem 1.6rem;
+  width: calc(100% - 31.8rem);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .div-nombre-apellidos .text-nombre {
+  margin-right: 35.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Termina Test, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-foto-perfil .div-nombre-apellidos .text-apellidos {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Termina Test, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-etiquetas {
+  width: 100%;
+  height: 5.7rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-etiquetas .etiqueta-nombre {
+  margin-right: 2rem;
+  box-sizing: border-box;
+  padding: 1.8rem 1.9rem 1.9rem 1.9rem;
+  width: 38.5rem;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #4f555a;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  background-color: #eaf0f7;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-etiquetas .etiqueta-apellido {
+  box-sizing: border-box;
+  padding: 1.8rem 1.9rem 1.9rem 1.9rem;
+  width: 38.5rem;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #4f555a;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  background-color: #eaf0f7;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo {
+  box-sizing: border-box;
+  padding-top: 4.4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .contenedor-etiquetas-contra-email {
+  margin: 0rem 36.2rem 2.2rem 1.9rem;
+  width: calc(100% - 38.1rem);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .contenedor-etiquetas-contra-email .text-contraseña {
+  margin-right: 20.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Termina Test, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .contenedor-etiquetas-contra-email .text-email {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Termina Test, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .div-pass-email {
+  margin: 0rem 20rem 1.3rem 0rem;
+  width: calc(100% - 20rem);
+  height: 5.7rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .div-pass-email .view-contraseña {
+  margin-right: 3.5rem;
+  box-sizing: border-box;
+  padding: 1.8rem 1.9rem 1.9rem 1.9rem;
+  width: 24.6rem;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #4f555a;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  background-color: #eaf0f7;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .div-pass-email .view-email {
+  width: 30.9rem;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #4f555a;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaf0f7;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .contenedor-btn-constra-email {
+  margin: 0rem 23.1rem 1.2rem 2.3rem;
+  width: calc(100% - 25.4rem);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .contenedor-btn-constra-email .btn-cambiar-contraseña {
+  margin-right: 9rem;
+  width: 19.9rem;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  transition: background-color 0.3s; /* Agrega transición suave al cambiar el color de fondo */
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f95252;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .btn-olvide-contraseña:hover,
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .contenedor-btn-constra-email .btn-cambiar-contraseña:hover{
+  background-color:#D84343; /* Rojo más oscuro al pasar el cursor */;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .contenedor-btn-constra-email .btn-cambiar-email {
+  width: 24.7rem;
+  border: none;
+  height: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f95252;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-mi-perfil .contenedor-contraseña-correo .btn-olvide-contraseña {
+  margin-left: 2.3rem;
+  width: 19.9rem;
+  height: 3.5rem;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: background-color 0.3s; /* Agrega transición suave al cambiar el color de fondo */
+  line-height: 1.2175;
+  color: #ffffff;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f95252;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+.mi-perfil .div-mi-perfil .contenedor-imagen {
+  width: 50rem;
+  height: 50rem;
+  position: absolute;
+  left: 73.2rem;
+  top: 53.5rem;
+}
+.mi-perfil .div-mi-perfil .contenedor-imagen .icon {
+  width: 50rem;
+  height: 50rem;
+  object-fit: cover;
+  vertical-align: top;
+}

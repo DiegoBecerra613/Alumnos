@@ -6,6 +6,34 @@
         "destination": "/mitablero.html"
       },
       {
+        "source": "/AdministrarCiclosEscolares",
+        "destination": "/administrarCiclosEscolares.html"
+      },
+      {
+        "source": "/CambiarContraseña",
+        "destination": "/cambiar-contrasea.html"
+      },
+      {
+        "source": "/CrearGrupo",
+        "destination": "/crear-grupo.html"
+      },
+      {
+        "source": "/DespedirGrupo",
+        "destination": "/despedir-grupo.html"
+      },
+      {
+        "source": "/NuevoMaestro",
+        "destination": "/nuevoMaestro.html"
+      },
+      {
+        "source": "/EliminarGrupo",
+        "destination": "/eliminarGrupo.html"
+      },
+      {
+        "source": "/RecuperarContraseña",
+        "destination": "/recuperar-contrasena.html"
+      },
+      {
         "source": "/registro",
         "destination": "/registro.html"
       },
@@ -18,12 +46,24 @@
         "destination": "/crear-grupo.html"
       },
       {
-        "source": "/TomarAsistencias",
-        "destination": "/tomar-asistencias.html"
+        "source": "/Tablero",
+        "destination": "/miTableroAdministrador.html"
+      },
+      {
+        "source": "/VerEstadisticas",
+        "destination": "/verEstadisticas.html"
       },
       {
         "source": "/EditarLista",
         "destination": "/editar-lista.html"
+      },
+      {
+        "source": "/TomarAsistencias",
+        "destination": "/tomar-asistencias.html"
+      },
+      {
+        "source": "/MiPerfil",
+        "destination": "/mi-perfil.html"
       },
       {
         "source": "**",
@@ -33,8 +73,8 @@
     "public": "./",
     "ignore": [
       "firebase.json",
-      "*/.",
-      "*/node_modules/*"
+      "**/.*",
+      "**/node_modules/**"
     ]
   }
 }

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="icons/fabicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Mi Perfil</title>
+  <link rel="stylesheet" href="./css/mi-perfil.css" />
+  <link rel="stylesheet" href="./css/loader.css"/>
+</head>
+<body>
+<div class="mi-perfil">
+  <div class="loader-background">
+    <div class="loader"></div>
+  </div>
+  <iframe src="menu1.html" frameborder="0" scrolling="no"  height="1000"></iframe>
+  <div class="div-mi-perfil">
+    <div class="contenedor-mi-perfil">
+      <div class="contenedor-foto-perfil">
+        <p class="text-mi-perfil">Mi Perfil</p>
+        <p class="info-datos-personales">Aqui puedes cambiar tus datos personales</p>
+        <p class="text-foto-perfil">Foto de Perfil</p>
+        <div class="contenedor-foto">
+          <div class="div-foto">
+            <img class="icon-edit" src="./assets/edit-2-1.png"/>
+          </div>
+          <div class="contenedor-botones-foto">
+            <button class="btn-borrar-foto">Borrar Foto</button>
+            <button class="btn-subir-foto">Subir Foto</button>
+          </div>
+        </div>
+        <div class="div-nombre-apellidos">
+          <p class="text-nombre">Nombre</p>
+          <p class="text-apellidos">Apellidos</p>
+        </div>
+      </div>
+      <div class="contenedor-etiquetas">
+        <div class="etiqueta-nombre"></div>
+        <div class="etiqueta-apellido"></div>
+      </div>
+      <div class="contenedor-contraseña-correo">
+        <div class="contenedor-etiquetas-contra-email">
+          <p class="text-contraseña">Contraseña</p>
+          <p class="text-email">Correo Electronico</p>
+        </div>
+        <div class="div-pass-email">
+          <span class="view-contraseña">.................</span>
+          <span class="view-email"></span>
+        </div>
+        <div class="contenedor-btn-constra-email">
+          <button class="btn-cambiar-contraseña">Cambiar Contraseña</button>
+        </div>
+        <button class="btn-olvide-contraseña">Olvide mi Contraseña</button>
+      </div>
+    </div>
+    <div class="contenedor-imagen">
+      <img class="icon" src="./assets/saly-12.png"/>
+    </div>
+  </div>
+</div>
+<script type="module" src="./javascript/mi-perfil.js"></script>
+</body>

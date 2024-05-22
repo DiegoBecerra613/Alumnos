@@ -4,14 +4,13 @@ import { createUserWithEmailAndPassword, getAuth } from "https://www.gstatic.com
 import { getFirestore, collection, doc, setDoc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyApGQm8o2efr0t8MBKczFF7yi7-lexS-xY",
-    authDomain: "alumassistprueba.firebaseapp.com",
-    projectId: "alumassistprueba",
-    storageBucket: "alumassistprueba.appspot.com",
-    messagingSenderId: "290788592374",
-    appId: "1:290788592374:web:85967780d4373795ea3ad7",
-    measurementId: "G-89RQQTTHMK"
-  };
+    apiKey: "AIzaSyBYaOFfj9umpzsfWWTtYD7KhOak2gUMwtM",
+    authDomain: "alumassist.firebaseapp.com",
+    projectId: "alumassist",
+    storageBucket: "alumassist.appspot.com",
+    messagingSenderId: "1080021803308",
+    appId: "1:1080021803308:web:57a41937424d7b81decc89"
+};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);

@@ -3,6 +3,8 @@ import { onAuthStateChanged, getAuth } from "https://www.gstatic.com/firebasejs/
 import { getFirestore, collection, doc, setDoc, getDocs, getDoc, where, query, orderBy, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", async function () {
+    // Mostrar el loader al principio
+    document.querySelector('.loader-background').classList.add('visible');
     const firebaseConfig = {
         apiKey: "AIzaSyApGQm8o2efr0t8MBKczFF7yi7-lexS-xY",
         authDomain: "alumassistprueba.firebaseapp.com",
@@ -184,6 +186,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             cuerpo.classList.remove('autenticado');
             window.location.href = 'index';
         }
+        // Ocultar el loader una vez que los datos se hayan cargado
+        document.querySelector('.loader-background').classList.remove('visible');
     });
 
 // Delegación de eventos

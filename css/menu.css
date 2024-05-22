@@ -63,31 +63,11 @@ input {
     vertical-align: top;
     flex-shrink: 0;
 }
-.menu .m_menu {
-    margin: 0rem 8.9rem 5.8rem 1.25rem;
-    width: calc(100% - 10.1501rem);
-    display: flex;
-    align-items: flex-end;
-    flex-shrink: 0;
-}
-.menu .m_menu .m_menu_logo {
-    margin: 0rem 1.45rem 0.075rem 0rem;
-    width: 2.0997rem;
-    height: 2.1004rem;
-    object-fit: contain;
-    vertical-align: top;
-    flex-shrink: 0;
-}
-.menu .m_menu .m_btnmenu {
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.2175;
-    color: #707579;
-    font-family: Montserrat, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-}
+
 .menu .m_mitablero {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
     margin: 0rem 5.1rem 4.975rem 1.1rem;
     box-sizing: border-box;
     padding-left: 0.1rem;
@@ -96,6 +76,7 @@ input {
     display: flex;
     align-items: flex-start;
     flex-shrink: 0;
+    z-index: 1;
 }
 .menu .m_mitablero .m_mitablero_logo {
     margin: 0.1rem 1.4rem 0rem 0rem;
@@ -115,37 +96,17 @@ input {
     white-space: nowrap;
     flex-shrink: 0;
 }
-.menu .m_descargarlista {
-    margin: 0rem 0rem 5.075rem 1.179rem;
-    width: calc(100% - 1.1787rem);
-    display: flex;
-    align-items: flex-end;
-    flex-shrink: 0;
-}
-.menu .m_descargarlista .m_descargarlista_icono {
-    margin-right: 1.3787rem;
-    width: 2.2426rem;
-    height: 2.25rem;
-    object-fit: contain;
-    vertical-align: top;
-    flex-shrink: 0;
-}
-.menu .m_descargarlista .m_btndescargarlista {
-    margin-bottom: 0.025rem;
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.2175;
-    color: #707579;
-    font-family: Montserrat, 'Source Sans Pro';
-    white-space: nowrap;
-    flex-shrink: 0;
-}
+
 .menu .m_miperfil {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
     margin: 0rem 4.7rem 53rem 1.25rem;
     width: calc(100% - 5.95rem);
     display: flex;
     align-items: flex-start;
     flex-shrink: 0;
+    z-index: 1;
 }
 .menu .m_miperfil .m_miperfil_logo {
     margin-right: 1.25rem;
@@ -166,11 +127,7 @@ input {
     white-space: nowrap;
     flex-shrink: 0;
 }
-.menu .m_btncerrarsesion {
-    margin: 0rem 0rem 2rem 0.7rem;
-    position: absolute;
-    top: 85%;
-    text-align: center;
+.menu .m_cerrarsesion .m_btncerrarsesion {
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.2175;
@@ -180,18 +137,31 @@ input {
     flex-shrink: 0;
 }
 .menu .m_cerrarsesion {
-    margin: 0rem 6.9rem 0rem 0.493rem;
-    width: calc(100% - 7.393rem);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    margin: 0rem 4rem 0rem 0.493rem;
+    width: auto;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-shrink: 0;
 }
 .menu .m_cerrarsesion .m_cerrarsesion_logo {
-    margin: 0rem 2.107rem 0.2rem 0rem;
-    width: 4rem;
-    height: 4rem;
-    position: relative;
-    top: -300%;
-    right: 30%;
+    margin: 0rem 0.5rem 0.2rem 0rem;
+    width: 3.4rem;
+    height: 3.5rem;
     flex-shrink: 0;
+}
+.menu .m_cerrarsesion:hover .m_btncerrarsesion,
+.menu .m_cerrarsesion:hover .m_cerrarsesion_logo {
+    filter: brightness(10%);
+}
+.menu .m_miperfil:hover .m_btnmiperfil,
+.menu .m_miperfil:hover .m_miperfil_logo {
+    filter: brightness(10%);
+}
+
+.menu .m_mitablero:hover .m_btnmitablero,
+.menu .m_mitablero:hover .m_mitablero_logo {
+    filter: brightness(75%);
 }

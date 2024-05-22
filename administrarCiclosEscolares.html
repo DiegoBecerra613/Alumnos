@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="icons/fabicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Administrar Ciclos Escolares</title>
+  <link rel="stylesheet" href="./css/administrarCiclosEscolares.css" />
+  <link rel="stylesheet" href="./css/loader.css"/>
+</head>
+<body>
+<div class="loader-background">
+  <div class="loader"></div>
+</div>
+<div class="administrar-ciclos-escolares">
+  <iframe src="menu.html" frameborder="0" scrolling="no"  height="1000"></iframe>
+  <div class="contenedor-ACE">
+    <div class="text-administrar-ciclo-escolar">
+      Administrar Ciclos Escolares
+    </div>
+    <div class="contenedor-crear-ciclo-escolar">
+      <div class="text-crear-ciclo-escolar">
+        Crear Ciclo Escolar
+      </div>
+      <div class="contenedor-btn-select">
+        <div class="contenedor-selects">
+          <div class="text-desde">
+            Desde:
+          </div>
+          <div class="selector-fecha-1">
+            <input type="date" id="fecha1" class="fecha-1">
+          </div>
+          <div class="text-hasta">
+            Hasta:
+          </div>
+          <div class="selector-fecha-2">
+            <input type="date" id="fecha2" class="fecha-2">
+          </div>
+        </div>
+        <button class="btn-crear-ciclo">
+              <span class="text-btn-crear-ciclo-escolar">
+              Crear Ciclo Escolar
+              </span>
+        </button>
+      </div>
+    </div>
+    <div class="text-eliminar-ciclo-escolar">
+      Eliminar Ciclo Escolar
+    </div>
+  </div>
+</div>
+<script type="module" src="./javascript/administrarCiclosEscolares.js"></script>
+</body>
+</html>

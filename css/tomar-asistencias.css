@@ -28,6 +28,7 @@ body:not(.autenticado) {
     display: none;
 }
 body {
+    width: 191.9rem;
 }.tomar-asistencia {
      width: 100%;
      overflow: hidden;

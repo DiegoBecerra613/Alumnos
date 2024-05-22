@@ -1,0 +1,567 @@
+@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+html {
+    font-size:62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+input {
+    border: none;
+}
+body {
+    width: 191.9rem;
+}.tablero {
+     width: 100%;
+     height: 94.5rem;
+     position: relative;
+     overflow: hidden;
+     background-color: #f6f6f6;
+ }
+
+.tablero .tablero_opciones {
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 10rem;
+    top: 0;
+}
+.tablero .tablero_opciones .div-botones1 {
+    width: 26.3rem;
+    height: 50rem;
+    position: absolute;
+    left: 19.9rem;
+    top: 3.3rem;
+}
+.tablero .tablero_opciones .div-botones1 .txt_mitablero {
+    margin: 0rem 8.387rem 3.4rem 0.5rem;
+    width: calc(100% - 8.8872rem);
+    height: 4.4rem;
+    display: flex;
+    align-items: flex-end;
+}
+.tablero .tablero_opciones .div-botones1 .txt_mitablero .txt_bienvenida {
+    margin-right: 0.2873rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .txt_mitablero .txt_bienvenida .mi-tablero-1RV {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .txt_mitablero .txt_bienvenida .text_holadenuevo {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .txt_mitablero .emoji_saludo {
+    margin-bottom: 0.0879rem;
+    width: 1.8255rem;
+    height: 1.8243rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_nuevo_maestro {
+    border: none;
+    margin-bottom: 6.9rem;
+    box-sizing: border-box;
+    padding: 1.8rem 0.2rem 1.9rem 0.2rem;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.tablero .tablero_opciones .div-botones1 .btn_nuevo_maestro .text_nuevomaestro {
+    margin: 0rem 16rem 0.625rem 0rem;
+    width: calc(100% - 16rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_nuevo_maestro .text_nuevomaestro .linea_nuevo_maestro {
+    margin: 0.1rem 2.4rem 0rem 0rem;
+    height: 3.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+
+.tablero .tablero_opciones .div-botones1 .btn_nuevo_maestro .text_nuevomaestro .txt_nuevo_maestro {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_nuevo_maestro .icon_nuevo_maestro {
+    margin: 0rem 0rem 2.325rem 0.1rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    position: relative;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_nuevo_maestro .txtInfo_nuevo_maestro {
+    margin-right: 1.3rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_eliminar_maestro {
+    border: none;
+    margin-bottom: 6.9rem;
+    width: 100%;
+    height: 16.3rem;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.tablero .tablero_opciones .div-botones1 .btn_eliminar_maestro .text_eliminar_maestro {
+    width: 11.1rem;
+    height: 1.3rem;
+    position: absolute;
+    left: 4.1rem;
+    top: 12.4rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+}
+.tablero .tablero_opciones .div-botones1 .btn_eliminar_maestro .lineaTxt_eliminar_maestro {
+    width: 12.1rem;
+    height: 3.9rem;
+    position: absolute;
+    left: 0.2rem;
+    top: 1.8rem;
+    display: flex;
+    align-items: flex-start;
+}
+.tablero .tablero_opciones .div-botones1 .btn_eliminar_maestro .lineaTxt_eliminar_maestro .linea_eliminar_maestro {
+    margin: 0.1rem 2.4rem 0rem 0rem;
+
+    height: 3.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_eliminar_maestro .lineaTxt_eliminar_maestro .txt_despedir_grupo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_eliminar_maestro .icon_eliminar_maestro {
+    width: 4.5rem;
+    height: 4.5rem;
+    position: absolute;
+    left: 10.9rem;
+    top: 5.6rem;
+    object-fit: contain;
+    vertical-align: top;
+}
+.tablero .tablero_opciones .div-botones1 .btn_aceptar_grupo {
+    border: none;
+    box-sizing: border-box;
+    padding: 1.8rem 0.2rem 1.9rem 0.2rem;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.tablero .tablero_opciones .div-botones1 .btn_aceptar_grupo .div_aceptar_grupo {
+    margin: 0rem 14.6rem 0rem 0rem;
+    width: calc(100% - 14.6rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_aceptar_grupo .div_aceptar_grupo .img_aceptar_grupo {
+    margin: 0.1rem 2.4rem 0rem 0rem;
+    width: 0rem;
+    height: 3.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_aceptar_grupo .div_aceptar_grupo .text_aceptar_grupo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_aceptar_grupo .icon_aceptar_grupo {
+    margin: 0rem 0rem 3.2rem 0.2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones1 .btn_aceptar_grupo .info_aceptar_grupo {
+    margin-right: 4.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 {
+    width: 26.3rem;
+    height: 38.1rem;
+    position: absolute;
+    left: 51.1rem;
+    top: 11.1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.tablero .tablero_opciones .div-botones2 .btn_ver_estadisticas {
+    border: none;
+    margin-bottom: 6.9rem;
+    box-sizing: border-box;
+    padding: 1.8rem 0.2rem 1.9rem 0.2rem;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_ver_estadisticas .div_ver_estadisticas {
+    margin: 0rem 13rem 0.8rem 0rem;
+    width: calc(100% - 13rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_ver_estadisticas .div_ver_estadisticas .linea_ver_estadisticas {
+    margin: 0.1rem 2.4rem 0rem 0rem;
+    height: 3.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_ver_estadisticas .div_ver_estadisticas .text_ver_estadisticas {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_ver_estadisticas .icon_ver_estadisticas {
+    margin: 0rem 0rem 2.558rem 0.044rem;
+    width: 3.3437rem;
+    height: 3.3424rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_ver_estadisticas .info_ver_estadisticas {
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_administrar_ciclos_escolares {
+    border: none;
+    box-sizing: border-box;
+    padding: 1.8rem 0.2rem 1.9rem 0.2rem;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_administrar_ciclos_escolares .div_administrar_ciclos_escolares {
+    margin: 0rem 12.3rem 0.3rem 0rem;
+    width: calc(100% - 12.3rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_administrar_ciclos_escolares .div_administrar_ciclos_escolares .linea_administrar_ciclos_escolares {
+    margin: 0.1rem 2.4rem 0rem 0rem;
+    height: 3.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_administrar_ciclos_escolares .div_administrar_ciclos_escolares .text_administrar_ciclos_escolares {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_administrar_ciclos_escolares .icon_administrar_ciclos_escolares {
+    margin-bottom: 1.9rem;
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones2 .btn_administrar_ciclos_escolares .info_administrar_ciclos_escolares {
+    margin-right: 2.9rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 {
+    box-sizing: border-box;
+    padding-bottom: 53.2rem;
+    width: 69.6rem;
+    height: 101.1rem;
+    position: absolute;
+    left: 82.3rem;
+    top: 1.3rem;
+}
+.tablero .tablero_opciones .div-botones3 .info_perfil {
+    margin: 0rem 16.2rem 3.8rem 30.7rem;
+    width: calc(100% - 46.9rem);
+    display: flex;
+    align-items: flex-start;
+}
+.tablero .tablero_opciones .div-botones3 .info_perfil .img_perfil {
+    margin-right: 1.7rem;
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    vertical-align: top;
+    border-radius: 5rem;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .info_perfil .div_info {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .info_perfil .div_info .text_usuario {
+    margin-bottom: 0.6rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #000000;
+    font-family: Poppins, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .info_perfil .div_info .email_usuario {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #707579;
+    font-family: Poppins, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_eliminar_grupo {
+    border: none;
+    margin-bottom: 6.9rem;
+    box-sizing: border-box;
+    padding: 1.8rem 0.2rem 1.9rem 0.2rem;
+    width: 26.3rem;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.tablero .tablero_opciones .div-botones3 .btn_eliminar_grupo .div_eliminar_grupo {
+    margin: 0rem 16.5rem 0.3rem 0rem;
+    width: calc(100% - 16.5rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_eliminar_grupo .div_eliminar_grupo .linea_eliminar_grupo {
+    margin: 0.1rem 2.4rem 0rem 0rem;
+    height: 3.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_eliminar_grupo .div_eliminar_grupo .text_eliminar_grupo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_eliminar_grupo .icon_eliminar_grupo {
+    margin-bottom: 1.9rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    position: relative;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_eliminar_grupo .info_eliminar_grupo {
+    margin-right: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_transferir_grupo {
+    border: none;
+    box-sizing: border-box;
+    padding: 1.8rem 0.2rem 1.9rem 0.2rem;
+    width: 26.3rem;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+.tablero .tablero_opciones .div-botones3 .btn_transferir_grupo .div_transferir_grupo {
+    margin: 0rem 13.3rem 0.3rem 0rem;
+    width: calc(100% - 13.3rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_transferir_grupo .div_transferir_grupo .linea_transferir_grupo {
+    margin: 0.1rem 2.4rem 0rem 0rem;
+    width: 0rem;
+    height: 3.8rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_transferir_grupo .div_transferir_grupo .text_transferir_grupo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2575;
+    color: #000000;
+    font-family: Termina Test, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_transferir_grupo .icon_transferir_grupo {
+    margin: 0rem 0rem 2.9rem 0rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    position: relative;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .div-botones3 .btn_transferir_grupo .info_transferir_grupo {
+    margin-right: 3.7rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.2175;
+    color: #000000;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.tablero .tablero_opciones .img_rocket {
+    box-sizing: border-box;
+    padding: 11.8rem 0rem 0rem 1.6rem;
+    width: 50rem;
+    height: 50rem;
+    position: absolute;
+    left: 120rem;
+    top: 20rem;
+}
+.tablero .tablero_opciones .img_rocket .img_tablero {
+    width: 50rem;
+    height: 50rem;
+    object-fit: cover;
+    vertical-align: top;
+}
+
+/* Agrega esto a tu CSS */
+.tablero .tablero_opciones .div-botones1 .btn_eliminar_maestro:hover,
+.tablero .tablero_opciones .div-botones1 .btn_nuevo_maestro:hover,
+.tablero .tablero_opciones .div-botones2 .btn_ver_estadisticas:hover,
+.tablero .tablero_opciones .div-botones2 .btn_administrar_ciclos_escolares:hover,
+.tablero .tablero_opciones .div-botones3 .btn_eliminar_grupo:hover {
+    filter: brightness(95%);
+}

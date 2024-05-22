@@ -2,7 +2,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, doc, getDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
+// Mostrar el loader
+document.querySelector('.loader-background').classList.add('visible');
 const firebaseConfig = {
     apiKey: "AIzaSyApGQm8o2efr0t8MBKczFF7yi7-lexS-xY",
     authDomain: "alumassistprueba.firebaseapp.com",
@@ -35,6 +36,8 @@ grupoNames.forEach((name) => {
     option.value = name;
     option.text = name;
     gradoSelector.add(option);
+    // Ocultar el loader una vez que los datos se hayan cargado
+    document.querySelector('.loader-background').classList.remove('visible');
 });
 
 // Cuando el usuario presione el botón "btnAceptar"
@@ -319,8 +322,8 @@ onAuthStateChanged(auth, async (user) => {
         if (userDoc.exists() && adminDoc.exists()) {
             const userKey = userDoc.data().claveMaestro;
             const adminKey = adminDoc.data().claveAdmin;
-            if (userKey === adminKey && window.location.pathname !== '/verEstadisticas') {
-                window.location.href = 'verEstadisticas';
+            if (userKey === adminKey && window.location.pathname !== '/VerEstadisticas') {
+                window.location.href = 'VerEstadisticas';
             } else if (userKey !== adminKey && window.location.pathname !== '/mitablero') {
                 window.location.href = 'mitablero';
             }

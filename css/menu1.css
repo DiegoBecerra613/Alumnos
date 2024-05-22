@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'TerminaTest-Regular';
+    src: url(/tipografias/TerminaTest-Regular.otf);
+}
+@font-face {
+    font-family: 'TerminaTest-SemiBold';
+    src: url(/tipografias/TerminaTest-Bold.otf);
+}
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: local("Arial Rounded MT Bold");
+    font-weight: normal;
+}
+html {
+    font-size:62.5%;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+input {
+    border: none;
+}
+
+.menu {
+    box-sizing: border-box;
+    padding: 4.6rem 1.2rem 4.4rem 5.6rem;
+    width: 25.3rem;
+    height: 93rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25), 0 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    background-color: #f6f6f6;
+    border-radius: 2rem;
+}
+.menu .m_baraa {
+    margin: 0rem 2.4rem 5.125rem 0rem;
+    width: calc(100% - 2.4rem);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.menu .m_baraa .m_logo {
+    margin-right: 9.3rem;
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.menu .m_baraa .m_opciones {
+    margin-bottom: 0.4rem;
+    width: 2.8rem;
+    height: 2.1rem;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+
+.menu .m_mitablero {
+    margin: 0rem 5.1rem 4.975rem 1.1rem;
+    box-sizing: border-box;
+    padding-left: 0.1rem;
+    width: calc(100% - 6.2rem);
+    height: 2.4rem;
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.menu .m_mitablero .m_mitablero_logo {
+    margin: 0.1rem 1.4rem 0rem 0rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    position: relative;
+    object-fit: contain;
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.menu .m_mitablero .m_btnmitablero {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #707579;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.menu .m_miperfil {
+    background-color: transparent;
+    border: none;
+    margin: 0rem 4.7rem 53rem 1.25rem;
+    width: calc(100% - 5.95rem);
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+}
+.menu .m_miperfil .m_miperfil_logo {
+    margin-right: 1.25rem;
+    width: 2.3rem;
+    height: 2.2rem;
+    position: relative;
+    object-fit: contain;
+
+    vertical-align: top;
+    flex-shrink: 0;
+}
+.menu .m_miperfil .m_btnmiperfil {
+    margin-top: 0rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #4461f2;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.menu .m_cerrarsesion .m_btncerrarsesion {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2175;
+    color: #707579;
+    font-family: Montserrat, 'Source Sans Pro';
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.menu .m_cerrarsesion {
+    border: none;
+    background-color: transparent;
+    margin: 0rem 4rem 0rem 0.493rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.menu .m_cerrarsesion .m_cerrarsesion_logo {
+    margin: 0rem 0.5rem 0.2rem 0rem;
+    width: 3.4rem;
+    height: 3.5rem;
+    flex-shrink: 0;
+}
+
+.menu .m_cerrarsesion:hover .m_btncerrarsesion,
+.menu .m_cerrarsesion:hover .m_cerrarsesion_logo {
+    filter: brightness(10%);
+}
+.menu .m_mitablero:hover .m_btnmitablero,
+.menu .m_mitablero:hover .m_mitablero_logo{
+    filter: brightness(10%);
+}
+.menu .m_miperfil:hover .m_btnmiperfil,
+.menu .m_miperfil:hover .m_miperfil_logo
+{
+    filter: brightness(75%);
+}
+
